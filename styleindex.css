@@ -2,6 +2,8 @@ body {
   background-color: black;
   margin: 0px;
   color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 header {
@@ -42,11 +44,13 @@ header img {
 
 
 .commercial-container #commercial-text {
-  font-size: 30px;
+  font-size: 3rem;
+  width: 100%;
   color: white;
+  text-align: center;
   position: absolute;
-  left: 40%;
-  top: 10%;
+  left: 0%;
+  top: 40%;
 
 }
 
