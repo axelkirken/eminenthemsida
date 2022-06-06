@@ -8,6 +8,10 @@ body {
   font-size: 1.25em;
 }
 
+h1 {
+  text-align: center;
+}
+
 header {
   height: 100VH;
 }
@@ -54,10 +58,19 @@ header img {
 }
 
 .projects {
+  clear: both;
   width: 100%;
-  display: grid;
+  height: 20em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
+.projects iframe {
+  padding: 10px 10px;
+  width: 480px;
+  height: 270px;
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -100,6 +113,11 @@ header img {
   .possibility ul {
     clear: none;
     column-count: 1
+  }
+
+  .projects iframe {
+    width: 560px;
+    height: 315px;
   }
 
 
