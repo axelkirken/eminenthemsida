@@ -43,7 +43,7 @@ header img {
 }
 
 
-.commercial-container #commercial-text {
+#commercial-text, #wedding-text {
   font-size: 3rem;
   width: 100%;
   color: white;
@@ -60,6 +60,7 @@ header img {
 }
 
 footer {
+  padding: 2em 2em;
   color: white;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -68,7 +69,7 @@ footer {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .commercial-container, .wedding-container {
     display: block;
     width: 100%
