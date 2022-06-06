@@ -4,6 +4,8 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  line-height: 1.5em;
+  font-size: 1.2em;
 }
 
 
@@ -32,10 +34,7 @@ header img {
 }
 
 .message {
-  margin: 30px 20px;
-  line-height: 1.8em;
-  font-size: 1.2em;
-
+  padding: 30px 20px 50px 20px;
 }
 
 .message img {
@@ -45,9 +44,16 @@ header img {
 
 }
 
+.quality img {
+  margin: 0px 20px 10px 0px;
+  width: 100%;
+  float: right;
+
+}
+
 
 @media only screen and (min-width: 768px) {
-  .message img {
+  .message img, .quality img {
     width: 40%;
 
 
