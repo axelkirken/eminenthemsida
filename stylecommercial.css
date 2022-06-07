@@ -152,15 +152,31 @@ header img {
 }
 
 /* Kontakta oss  */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 .contact .text {
+  width:100VW;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.contact .text h1 {
+  text-align: left;
+}
+
+#name, #email, #message {
+  margin-top:10px;
+}
+
 .contact .form {
-  margin: 10%;
+  width: 100VW;
+  margin: 0 10%;
 }
 
 .contact form {
@@ -176,48 +192,32 @@ header img {
   box-sizing: border-box;
 }
 
-
-#name_field {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-#last_name_field {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-#first_name {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-#last_name {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-#email {
-  grid-row: 3;
-  grid-column: 1;
-}
-
-#email_field {
-  width: 100%;
-  grid-row: 4;
-  grid-column: span 2;
+#send-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  width: 10em;
+  border-radius: 0;
+  background-color: #ffffff;
 
 }
 
-#message {
-  grid-row: 5;
-  grid-column: 1;
+#send-button:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border: 2px solid white;
 }
 
-#message_field {
-  grid-row: 6;
-  grid-column: span 2;
+footer {
+  padding: 2em 2em;
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+
 }
+
+
 
 
 @media only screen and (min-width: 768px) {
@@ -258,6 +258,15 @@ header img {
   .staff img {
     width: 30%;
   }
+
+  .contact .text {
+    width: 30%;
+  }
+
+  .contact .form {
+    width: 30%;
+  }
+
 
 }
 
