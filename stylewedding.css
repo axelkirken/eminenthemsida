@@ -1,3 +1,323 @@
 body {
-  background-color: #ce8b7e;
+  background-color: #ce8b7e;;
+  margin: 0px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+  font-size: 1.25em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+header {
+  height: 100VH;
+}
+
+header img {
+  position: relative;
+  width: 15em;
+  margin: 10px 10px;
+  z-index: 1;
+}
+
+#background-video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+/* Budskap, kvalitet och produkter */
+
+.message, .quality, .possibility {
+  padding: 10px 20px 10px 20px;
+  min-height: 20em;
+}
+
+.quality {
+  min-height: 15em;
+}
+
+.message img, .possibility img {
+  margin: 20px 20px 10px 0px;
+  width: 100%;
+  float: left;
+}
+
+.quality img {
+  margin: 20px 0px 10px 0px;
+  width: 100%;
+  float: right;
+}
+
+
+/* Om oss */
+.staff {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.staff img {
+  margin: 10px 10px;
+  width: 60%;
+}
+
+.staff .text {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+/* Kontakta oss  */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+
+.contact .text {
+  width:100VW;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.contact .text h1 {
+  text-align: left;
+}
+
+#name, #email, #message {
+  margin-top:10px;
+}
+
+.contact .form {
+  width: 100VW;
+  margin: 0 10%;
+}
+
+.contact form {
+  display: grid;
+  text-align: left;
+  row-gap: 0px;
+}
+
+.contact input, .contact textarea {
+  border-radius: 6px;
+  border-color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#send-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #a66d62;
+  width: 10em;
+  border-radius: 0;
+  background-color: #ffffff;
+  border-color: #a66d62;
+
+}
+
+#send-button:hover {
+  color: #ffffff;
+  background-color: #a66d62;
+  border: 2px solid #ffffff;
+}
+
+footer {
+  padding: 2em 2em;
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  line-height: 1.5em;
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+  .message img, .quality img, .possibility img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 25em;
+  }
+
+  .possibility img {
+    margin-right: 40px;
+  }
+  .possibility ul {
+    column-count: 2;
+    clear: both;
+  }
+
+  .projects .video-wrap, .free-projects .video-wrap {
+      width: 40%;
+      position: relative;
+      overflow: hidden;
+      padding-top: 22.5%;
+      margin: 15px 15px;
+  }
+
+  .partners .computer {
+    display: block;
+  }
+
+  .partners .mobile {
+    display: None;
+  }
+
+  .partners img {
+    width: 100%;
+  }
+
+  .staff img {
+    width: 30%;
+  }
+
+  .contact .text {
+    width: 30%;
+  }
+
+  .contact .form {
+    width: 30%;
+  }
+
+
+}
+
+
+@media only screen and (min-width: 992px) {
+  .message img, .quality img, .possibility img {
+    margin-left: 30px;
+    margin-right: 50px;
+  }
+
+  .message .text {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .quality img {
+    margin-left: 150px;
+  }
+
+  .quality .text {
+    margin-left: 30px;
+  }
+
+  .possibility ul {
+    clear: none;
+    column-count: 1
+  }
+
+  .projects iframe {
+    width: 560px;
+    height: 315px;
+  }
+
+
+}
+
+
+/* Ordkarusell */
+
+.word-wrap {
+  width: 100%;
+
+}
+
+.sentence{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  line-height: 1em;
+  font-size: 2.5em;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.constant_words {
+  z-index: 1;
+}
+
+
+/*Vertical Sliding*/
+.slidingVertical{
+  width: 5.3em;
+	text-indent: 10px;
+}
+.slidingVertical span{
+	animation: topToBottom 10s linear infinite 0s;
+	-ms-animation: topToBottom 10s linear infinite 0s;
+	-webkit-animation: topToBottom 10s linear infinite 0s;
+	color: #ffffff;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.slidingVertical span:nth-child(2){
+	animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+}
+.slidingVertical span:nth-child(3){
+	animation-delay: 5s;
+	-ms-animation-delay: 5s;
+	-webkit-animation-delay: 5s;
+}
+.slidingVertical span:nth-child(4){
+	animation-delay: 7.5s;
+	-ms-animation-delay: 7.5s;
+	-webkit-animation-delay: 7.5s;
+}
+
+
+/*topToBottom Animation*/
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
 }
