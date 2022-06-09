@@ -35,7 +35,7 @@ header img {
   top: 0;
   bottom: 0;
   z-index: 0;
-  object-fit: cover;
+
 }
 
 /* Budskap, kvalitet och produkter */
@@ -112,7 +112,7 @@ header img {
 
 .staff img {
   margin: 10px 10px;
-  width: 60%;
+  width: 40%;
 }
 
 .staff .text {
@@ -196,10 +196,19 @@ header img {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   width: 10em;
-  border-radius: 0;
+  border-radius: 0px;
+  color: #000000;
   background-color: #ffffff;
 
 }
+
+
+/* Can be a fix for different form look on phone, needs testing */
+/* input {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+} */
 
 #send-button:hover {
   color: #ffffff;
