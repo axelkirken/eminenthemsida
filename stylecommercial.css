@@ -63,7 +63,7 @@ header img {
 
 /* Utvalda projekt */
 
-.projects {
+.videos {
   clear: both;
   width: 100%;
   min-height: 20em;
@@ -72,7 +72,7 @@ header img {
   justify-content: space-evenly;
 }
 
-.projects .video-wrap {
+.videos .video-wrap {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -80,7 +80,7 @@ header img {
     margin: 15px 15px;
 }
 
-.projects .video-wrap iframe {
+.videos .video-wrap iframe {
   position: absolute;
     top: 0;
     left: 0;
@@ -119,6 +119,8 @@ header img {
   padding-left: 10%;
   padding-right: 10%;
 }
+
+
 
 /* Vårt ideella arbete */
 
@@ -204,11 +206,11 @@ header img {
 
 
 /* Can be a fix for different form look on phone, needs testing */
-/* input {
--webkit-appearance: none;
+input {
+-webkit-appearance: none; 
 -moz-appearance: none;
 appearance: none;
-} */
+}
 
 #send-button:hover {
   color: #ffffff;
