@@ -61,6 +61,47 @@ header img {
   float: right;
 }
 
+/* Paket */
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background-color: #e6e4e8;
+  color: #000000;
+  padding: 15px 15px;
+  margin: 15px 15px;
+  text-align: center;
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+.arrows {
+  text-align: center;
+  font-size: 2em;
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #a66d62;
+  border-radius: 50%;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
 
 /* Om oss */
 .staff {
