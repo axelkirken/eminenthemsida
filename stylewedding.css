@@ -169,6 +169,12 @@ header img {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  font-size: inherit;
+}
+
+.contact textarea {
+  font-family: 'Montserrat', sans serif;
+  resize: none;
 }
 
 #send-button {
