@@ -62,6 +62,11 @@ header img {
 }
 
 /* Paket */
+.cards {
+  display: flex;
+  height: 400px;
+  overflow: hidden;
+}
 
 .card ul {
   list-style: none;
@@ -71,17 +76,18 @@ header img {
 }
 
 .card {
+  flex-shrink: 0;
+  height: 100%;
+  width: 100VW;
   background-color: #e6e4e8;
   color: #000000;
   padding: 15px 15px;
   margin: 15px 15px;
   text-align: center;
-  display: none;
 }
 
-.show {
-  display: inline-block;
-}
+/* .show {
+} */
 
 .arrows {
   text-align: center;
