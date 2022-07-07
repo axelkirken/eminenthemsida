@@ -164,6 +164,7 @@ header img {
 }
 
 .contact input, .contact textarea {
+  border-style: solid;
   border-radius: 6px;
   border-color: white;
   padding: 12px 20px;
