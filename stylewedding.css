@@ -62,10 +62,14 @@ header img {
 }
 
 /* Paket */
-.cards {
+/* .cards {
   display: flex;
   height: 400px;
   overflow: hidden;
+} */
+
+.cards {
+  text-align: center;
 }
 
 .card ul {
@@ -73,21 +77,61 @@ header img {
   padding-left: 0;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .card {
-  flex-shrink: 0;
+  position: relative;
+  animation-fill-mode: forwards;  
   height: 100%;
-  width: 100VW;
+  width: 80VW;
   background-color: #e6e4e8;
   color: #000000;
   padding: 15px 15px;
   margin: 15px 15px;
   text-align: center;
+  display: none;
 }
 
-/* .show {
-} */
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-100%)  
+  }
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(100%)  
+  }
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+@keyframes moveOutRight {
+  0% {
+    transform: translateX(0%)  
+  }
+  100% {
+    transform: translateX(100%)
+  }
+}
+
+@keyframes moveOutLeft {
+  0% {
+    transform: translateX(0%)  
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+.show {
+  display: inline-block;
+}
 
 .arrows {
   text-align: center;

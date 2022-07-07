@@ -11,8 +11,15 @@ const moveRight = () => {
     const oldCard = cardList[state];
     const newCard = cardList[(state+1)%3];
     state = (state+1)%3;
-    oldCard.classList.toggle("show");
-    newCard.classList.toggle("show"); 
+    oldCard.style.animation = "moveOutRight ease-in-out 20s"
+    setTimeout(() => {
+        newCard.classList.toggle("show"); 
+        newCard.style.animation = "moveInLeft ease-in-out 20s"
+    }, 2000);
+    setTimeout(() => {
+        oldCard.classList.toggle("show");
+    },20000)
+    
 }
 
 const moveLeft = () => {
