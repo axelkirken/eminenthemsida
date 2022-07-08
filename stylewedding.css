@@ -61,15 +61,36 @@ header img {
   float: right;
 }
 
-/* Paket */
-/* .cards {
-  display: flex;
-  height: 400px;
-  overflow: hidden;
-} */
+.products {
+  background-color: #a66d62;
+}
 
+/* Paket */
 .cards {
   text-align: center;
+  position: relative;
+  white-space: nowrap;
+  overflow-x: hidden;
+  height: 22em;
+}
+
+.card {
+  position: absolute;
+  top: 2em; left: 10vw;
+  animation-fill-mode: forwards;  
+  height: 18em;
+  width: 76VW;
+  background-color: #e6e4e8;
+  color: #000000;
+  padding: 2vw 2vw;
+  margin: 0px 0px;
+  text-align: center;
+  display: none;
+  white-space: normal;
+}
+
+.show {
+  display: inline-block;
 }
 
 .card ul {
@@ -80,58 +101,46 @@ header img {
   
 }
 
-.card {
-  position: relative;
-  animation-fill-mode: forwards;  
-  height: 100%;
-  width: 80VW;
-  background-color: #e6e4e8;
-  color: #000000;
-  padding: 15px 15px;
-  margin: 15px 15px;
-  text-align: center;
-  display: none;
-}
-
 @keyframes moveInLeft {
   0% {
-    transform: translateX(-100%)  
+    /* transform: translateX(-100vw);   */
+    left: -90vw
   }
   100% {
-    transform: translateX(0px)
+    /* transform: translateX(0vw); */
+    left: 10vw;
   }
 }
 
 @keyframes moveInRight {
   0% {
-    transform: translateX(100%)  
+    left: 110vw
   }
   100% {
-    transform: translateX(0px)
+    left: 10vw
   }
 }
 
 @keyframes moveOutRight {
   0% {
-    transform: translateX(0%)  
+    /* transform: translateX(0vw);   */
+    left: 10vw
   }
   100% {
-    transform: translateX(100%)
+    /* transform: translateX(100vw); */
+    left: 110vw
   }
 }
 
 @keyframes moveOutLeft {
   0% {
-    transform: translateX(0%)  
+    left: 10vw
   }
   100% {
-    transform: translateX(-100%)
+    left: -90vw
   }
 }
 
-.show {
-  display: inline-block;
-}
 
 .arrows {
   text-align: center;
@@ -139,19 +148,20 @@ header img {
 }
 
 .arrow {
+  margin: 2vw;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 60px;
   height: 60px;
-  background-color: #a66d62;
+  background-color: #ce8b7e;
   border-radius: 50%;
+  user-select: none;
 }
 
 .arrow:hover {
   cursor: pointer;
 }
-
 
 /* Om oss */
 .staff {

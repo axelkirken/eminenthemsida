@@ -6,32 +6,49 @@ const gold = document.getElementById("gold");
 
 let cardList = [silver, gold, diamond];
 let state = 1;
+let speed = 1500
+let animationSpeed = String(speed / 1000) + "s"
 
 const moveRight = () => {
-    const oldCard = cardList[state];
-    const newCard = cardList[(state+1)%3];
-    state = (state+1)%3;
-    oldCard.style.animation = "moveOutRight ease-in-out 20s"
-    setTimeout(() => {
-        newCard.classList.toggle("show"); 
-        newCard.style.animation = "moveInLeft ease-in-out 20s"
-    }, 2000);
+    // Select new card
+    let oldCard = cardList[state];
+    
+    if (oldCard.style.animation !== "") return;
+
+    state = (state + 2) % 3;
+    let newCard = cardList[state];
+
+    oldCard.style.animation = "moveOutRight ease-in-out " + animationSpeed
+    newCard.style.animation = "moveInLeft ease-in-out " + animationSpeed
+    newCard.classList.toggle("show"); 
+
     setTimeout(() => {
         oldCard.classList.toggle("show");
-    },20000)
-    
+        oldCard.style.animation = ""
+        newCard.style.animation = ""
+    }, speed);    
 }
 
 const moveLeft = () => {
-    const oldCard = cardList[state];
-    const newCard = cardList[(state+4)%3];
-    state = (state+4)%3;
-    oldCard.classList.toggle("show");
+    // Select new card
+    let oldCard = cardList[state];
+
+    if (oldCard.style.animation !== "") return;
+
+    state = (state + 1) % 3;
+    let newCard = cardList[state];
+
+
+    oldCard.style.animation = "moveOutLeft ease-in-out " + animationSpeed
+    newCard.style.animation = "moveInRight ease-in-out " + animationSpeed
     newCard.classList.toggle("show"); 
+
+    setTimeout(() => {
+        oldCard.classList.toggle("show");
+        oldCard.style.animation = ""
+        newCard.style.animation = ""
+    }, speed);    
 }
-
-
-
 
 rightArrow.addEventListener("click", moveRight);
 leftArrow.addEventListener("click", moveLeft);
