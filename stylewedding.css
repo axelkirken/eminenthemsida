@@ -80,13 +80,16 @@ header img {
   animation-fill-mode: forwards;  
   height: 18em;
   width: 76VW;
-  background-color: #e6e4e8;
-  color: #000000;
+  /* background-color: #e6e4e8; */
+  background-image: url("images/paper.jpeg");
+  color: #181818;
   padding: 2vw 2vw;
   margin: 0px 0px;
   text-align: center;
   display: none;
   white-space: normal;
+  border-radius: 6px;
+  text-shadow:0 -1px 0 #515050;
 }
 
 .show {
