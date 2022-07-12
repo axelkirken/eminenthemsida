@@ -364,7 +364,6 @@ footer {
   font-size: 2.5em;
   color: white;
   z-index: 1;
-  overflow: hidden;
 }
 
 .constant_words {
