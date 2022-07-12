@@ -9,6 +9,7 @@ let state = 1;
 let speed = 1500
 let animationSpeed = String(speed / 1000) + "s"
 
+
 const moveRightOne = () => {
     // Select new card
     let oldCard = cardList[state];
@@ -28,6 +29,7 @@ const moveRightOne = () => {
         newCard.style.animation = ""
     }, speed);    
 }
+
 
 const moveLeftOne = () => {
     // Select new card
@@ -72,8 +74,32 @@ const moveLeftTwo = () => {
         middleCard.style.animation = ""
         newCard.style.animation = ""
     }, speed);  
+}
 
 
+const moveRightTwo = () => {
+    let oldCard = cardList[(state+1)%3];
+    let middleCard = cardList[state];
+    let newCard = cardList[(state+2)%3];
+    if (oldCard.style.animation !== "") return;
+    if (middleCard.style.animation !== "") return;
+    if (newCard.style.animation !== "") return;
+    state = (state + 2) % 3;
+    
+
+    newCard.classList.add("show")
+    newCard.style.animation = "moveInLeftTwo ease-in-out " + animationSpeed;
+    oldCard.style.animation = "moveOutRightTwo ease-in-out " + animationSpeed;
+    middleCard.style.animation = "moveRight ease-in-out " + animationSpeed;
+    
+    setTimeout(() => {
+        middleCard.classList.remove("show")
+        middleCard.classList.add("show2")
+        oldCard.classList.remove("show2");
+        oldCard.style.animation = ""
+        middleCard.style.animation = ""
+        newCard.style.animation = ""
+    }, speed);  
 }
 
 
@@ -90,6 +116,7 @@ const moveRight = () => {
     const screenSmall = window.matchMedia("(max-width: 768px")
     if (screenSmall.matches) {
         moveRightOne()
+    } else {
         moveRightTwo()
     }
 }
@@ -103,6 +130,7 @@ const resize = () => {
         cardList[(state+1)%3].classList.add("show2")
     }
 }
+
 rightArrow.addEventListener("click", moveLeft);
 leftArrow.addEventListener("click", moveRight);
 

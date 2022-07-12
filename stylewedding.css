@@ -61,17 +61,24 @@ header img {
   float: right;
 }
 
+
+/* Paket */
 .products {
   background-color: #a66d62;
 }
 
-/* Paket */
+.products h1 {
+  padding: 10px 0px 0px 0px;
+  margin: 0;
+}
+
 .cards {
   text-align: center;
   position: relative;
   white-space: nowrap;
   overflow-x: hidden;
   height: 22em;
+  line-height: 1.2em;
 }
 
 .card {
@@ -92,6 +99,35 @@ header img {
   text-shadow:0 -1px 0 #515050;
 }
 
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.arrows {
+  text-align: center;
+  font-size: 2em;
+}
+
+.arrow {
+  margin: 2vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #ce8b7e;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
   .show2 {
     display: inline-block;
@@ -107,13 +143,28 @@ header img {
   display: inline-block;
 }
 
-.card ul {
-  list-style: none;
-  padding-left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  
+@media only screen and (min-width: 992px) {
+  .arrows {
+    display: none;
+  }
+
+  #silver {
+    display: inline-block;
+    left: calc(20% - 10rem);
+  }
+
+  #gold {
+    display: inline-block;
+    left: calc(50% - 10rem);
+  }
+
+  #diamond {
+    display: inline-block;
+    left: calc(80% - 10rem);
+  }
 }
+
+
 
 @keyframes moveInLeft {
   0% {
@@ -183,27 +234,33 @@ header img {
   }
 }
 
-
-.arrows {
-  text-align: center;
-  font-size: 2em;
+@keyframes moveRight {
+  0% {
+    left: calc(25%-10rem)
+  }
+  100% {
+    left: calc(75% - 10rem)
+  }
 }
 
-.arrow {
-  margin: 2vw;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: #ce8b7e;
-  border-radius: 50%;
-  user-select: none;
+@keyframes moveInLeftTwo {
+  0% {
+    left: -90vw
+  }
+  100% {
+    left: calc(25% - 10rem)
+  }
 }
 
-.arrow:hover {
-  cursor: pointer;
+@keyframes moveOutRightTwo {
+  0% {
+    left: calc(75% -10rem)
+  }
+  100% {
+    left: calc(110vw)
+  }
 }
+
 
 /* Om oss */
 .staff {
