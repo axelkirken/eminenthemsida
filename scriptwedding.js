@@ -38,7 +38,6 @@ const moveLeft = () => {
     state = (state + 1) % 3;
     let newCard = cardList[state];
 
-
     oldCard.style.animation = "moveOutLeft ease-in-out " + animationSpeed
     newCard.style.animation = "moveInRight ease-in-out " + animationSpeed
     newCard.classList.toggle("show"); 
