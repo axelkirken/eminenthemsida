@@ -77,10 +77,10 @@ header img {
 .card {
   position: absolute;
   font-size: 1rem;
-  top: 2em; left: 10vw;
+  top: 2em; left: calc(50% - 10rem);
   animation-fill-mode: forwards;  
   height: 20em;
-  width: 76VW;
+  width: 20rem;
   background-image: url("images/paper.jpeg");
   color: #181818;
   padding: 2vw 2vw; 
@@ -111,7 +111,8 @@ header img {
   }
   100% {
     /* transform: translateX(0vw); */
-    left: 10vw;
+    left: calc(50%-10rem);
+    
   }
 }
 
@@ -120,14 +121,14 @@ header img {
     left: 110vw
   }
   100% {
-    left: 10vw
+    left: calc(50% - 10rem)
   }
 }
 
 @keyframes moveOutRight {
   0% {
     /* transform: translateX(0vw);   */
-    left: 10vw
+    left: calc(50% - 10rem)
   }
   100% {
     /* transform: translateX(100vw); */
@@ -137,7 +138,7 @@ header img {
 
 @keyframes moveOutLeft {
   0% {
-    left: 10vw
+    left: calc(50% - 10rem)
   }
   100% {
     left: -90vw
