@@ -76,9 +76,10 @@ header img {
 
 .card {
   position: absolute;
+  font-size: 1rem;
   top: 2em; left: 10vw;
   animation-fill-mode: forwards;  
-  height: 18em;
+  height: 20em;
   width: 76VW;
   background-color: #e6e4e8;
   color: #000000;
