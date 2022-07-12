@@ -49,5 +49,5 @@ const moveLeft = () => {
     }, speed);    
 }
 
-rightArrow.addEventListener("click", moveRight);
-leftArrow.addEventListener("click", moveLeft);
+rightArrow.addEventListener("click", moveLeft);
+leftArrow.addEventListener("click", moveRight);
