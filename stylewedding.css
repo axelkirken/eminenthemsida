@@ -92,6 +92,17 @@ header img {
   text-shadow:0 -1px 0 #515050;
 }
 
+@media only screen and (min-width: 768px) {
+  .show2 {
+    display: inline-block;
+    left: calc(75% - 10rem);
+  }
+
+  .show {
+    left: calc(25% - 10rem);
+  }
+}
+
 .show {
   display: inline-block;
 }
@@ -142,6 +153,33 @@ header img {
   }
   100% {
     left: -90vw
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: calc(75%-10rem)
+  }
+  100% {
+    left: calc(25% - 10rem)
+  }
+}
+
+@keyframes moveInRightTwo {
+  0% {
+    left: 110vw
+  }
+  100% {
+    left: calc(75% - 10rem)
+  }
+}
+
+@keyframes moveOutLeftTwo {
+  0% {
+    left: calc(25% -10rem)
+  }
+  100% {
+    left: calc(-90vw)
   }
 }
 
