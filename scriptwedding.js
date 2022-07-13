@@ -4,21 +4,41 @@ const diamond = document.getElementById("diamond");
 const silver = document.getElementById("silver");
 const gold = document.getElementById("gold");
 
-let cardList = [silver, gold, diamond];
-let state = 1;
-let speed = 1500
-let animationSpeed = String(speed / 1000) + "s"
+let speed = 1000;
+let animationSpeed = String(speed / 1000) + "s";
+
+const firstStep = document.getElementById("firstStep");
+const secondStep = document.getElementById("secondStep");
+const thirdStep = document.getElementById("thirdStep");
+const fourthStep = document.getElementById("fourthStep");
+const leftArrow2 = document.getElementById("leftArrow2");
+const rightArrow2 = document.getElementById("rightArrow2")
 
 
-const moveRightOne = () => {
+const products = {
+    cardList: [silver, gold, diamond],
+    state: 1,
+}
+
+const workflow = {
+    cardList: [firstStep, secondStep, thirdStep, fourthStep],
+    state: 0,
+}
+
+
+const moveRightOne = (obj) => {
     // Select new card
+    let cardList = obj.cardList;
+    let state = obj.state;
+    let i = cardList.length;
+
     let oldCard = cardList[state];
+    let newCard = cardList[(state+i-1)%i];
     
     if (oldCard.style.animation !== "") return;
 
-    state = (state + 2) % 3;
-    let newCard = cardList[state];
-
+    obj.state = (state + i-1) % i;
+    
     oldCard.style.animation = "moveOutRight ease-in-out " + animationSpeed
     newCard.style.animation = "moveInLeft ease-in-out " + animationSpeed
     newCard.classList.toggle("show"); 
@@ -27,18 +47,21 @@ const moveRightOne = () => {
         oldCard.classList.toggle("show");
         oldCard.style.animation = ""
         newCard.style.animation = ""
-    }, speed);    
+    }, speed-2);    
 }
 
 
-const moveLeftOne = () => {
+const moveLeftOne = (obj) => {
     // Select new card
+    let cardList = obj.cardList;
+    let state = obj.state;
+    let i = cardList.length;
+
     let oldCard = cardList[state];
-
+    let newCard = cardList[(state+1)%i];
     if (oldCard.style.animation !== "") return;
-    state = (state + 1) % 3;
-    let newCard = cardList[state];
-
+    obj.state = (state + 1) % i;
+    
     oldCard.style.animation = "moveOutLeft ease-in-out " + animationSpeed
     newCard.style.animation = "moveInRight ease-in-out " + animationSpeed
     newCard.classList.toggle("show"); 
@@ -47,18 +70,22 @@ const moveLeftOne = () => {
         oldCard.classList.toggle("show");
         oldCard.style.animation = ""
         newCard.style.animation = ""
-    }, speed);    
+    }, speed-2);    
 }
 
 
-const moveLeftTwo = () => {
+const moveLeftTwo = (obj) => {
+    let cardList = obj.cardList;
+    let state = obj.state;
+    let i = cardList.length;
+
     let oldCard = cardList[state];
-    let middleCard = cardList[(state+1)%3];
-    let newCard = cardList[(state+2)%3];
+    let middleCard = cardList[(state+1)%i];
+    let newCard = cardList[(state+2)%i];
     if (oldCard.style.animation !== "") return;
     if (middleCard.style.animation !== "") return;
     if (newCard.style.animation !== "") return;
-    state = (state + 1) % 3;
+    obj.state = (state + 1) % i;
     
 
     newCard.classList.add("show2")
@@ -73,18 +100,22 @@ const moveLeftTwo = () => {
         oldCard.style.animation = ""
         middleCard.style.animation = ""
         newCard.style.animation = ""
-    }, speed);  
+    }, speed-2);  
 }
 
 
-const moveRightTwo = () => {
-    let oldCard = cardList[(state+1)%3];
+const moveRightTwo = (obj) => {
+    let cardList = obj.cardList;
+    let state = obj.state;
+    let i = cardList.length;
+
+    let oldCard = cardList[(state+1)%i];
     let middleCard = cardList[state];
-    let newCard = cardList[(state+2)%3];
+    let newCard = cardList[(state+i-1)%i];
     if (oldCard.style.animation !== "") return;
     if (middleCard.style.animation !== "") return;
     if (newCard.style.animation !== "") return;
-    state = (state + 2) % 3;
+    obj.state = (state + i-1) % i;
     
 
     newCard.classList.add("show")
@@ -99,43 +130,70 @@ const moveRightTwo = () => {
         oldCard.style.animation = ""
         middleCard.style.animation = ""
         newCard.style.animation = ""
-    }, speed);  
+    }, speed-2);  
 }
 
 
-const moveLeft = () => {
+const moveLeftProduct = () => {
     let screenSmall = window.matchMedia("(max-width: 768px)")
     if (screenSmall.matches) {
-        moveLeftOne()
+        moveLeftOne(products)
     } else {
-        moveLeftTwo()
+        moveLeftTwo(products)
     }
 }
 
-const moveRight = () => {
+const moveRightProduct = () => {
     const screenSmall = window.matchMedia("(max-width: 768px")
     if (screenSmall.matches) {
-        moveRightOne()
+        moveRightOne(products)
     } else {
-        moveRightTwo()
+        moveRightTwo(products)
     }
 }
+
+
+const moveLeftWorkflow = () => {
+    let screenSmall = window.matchMedia("(max-width: 768px)")
+    if (screenSmall.matches) {
+        if (workflow.state === 3) return;
+        moveLeftOne(workflow)
+    } else {
+        if (workflow.state === 2) return;
+        moveLeftTwo(workflow)
+    }
+}
+
+const moveRightWorkflow = () => {
+    if (workflow.state === 0) return;
+    const screenSmall = window.matchMedia("(max-width: 768px")
+    if (screenSmall.matches) {
+        moveRightOne(workflow)
+    } else {
+        moveRightTwo(workflow)
+    }
+}
+
+
+rightArrow.addEventListener("click", moveLeftProduct);
+leftArrow.addEventListener("click", moveRightProduct);
+rightArrow2.addEventListener("click", moveLeftWorkflow);
+leftArrow2.addEventListener("click", moveRightWorkflow);
+
 
 const resize = () => {
     if (window.matchMedia("(max-width: 768px)").matches) {
-        cardList[state].classList.add("show")
-        cardList[(state+1)%3].classList.remove("show2")
+        products.cardList[products.state].classList.add("show")
+        products.cardList[(products.state+1)%3].classList.remove("show2")
+        workflow.cardList[workflow.state].classList.add("show")
+        workflow.cardList[(workflow.state+1)%3].classList.remove("show2")
     } else {
-        cardList[state].classList.add("show")
-        cardList[(state+1)%3].classList.add("show2")
+        products.cardList[products.state].classList.add("show")
+        products.cardList[(products.state+1)%3].classList.add("show2")
+        workflow.cardList[workflow.state].classList.add("show")
+        workflow.cardList[(workflow.state+1)%3].classList.add("show2")
     }
 }
 
-rightArrow.addEventListener("click", moveLeft);
-leftArrow.addEventListener("click", moveRight);
-
 window.addEventListener("resize", resize)
-
-
-
 resize();
