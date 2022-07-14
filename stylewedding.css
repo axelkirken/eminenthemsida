@@ -421,6 +421,8 @@ footer {
 
 /*Vertical Sliding*/
 .slidingVertical{
+  display: flex;
+  justify-content: center;
   width: 5.3em;
 	text-indent: 10px;
 }
@@ -430,7 +432,6 @@ footer {
 	-webkit-animation: topToBottom 10s linear infinite 0s;
 	color: #ffffff;
 	opacity: 0;
-	overflow: hidden;
 	position: absolute;
 }
 .slidingVertical span:nth-child(2){
@@ -448,6 +449,13 @@ footer {
 	-ms-animation-delay: 7.5s;
 	-webkit-animation-delay: 7.5s;
 }
+
+@media only screen and (min-width: 592px) {
+  .slidingVertical {
+    display: block;
+  }
+}
+
 
 
 /*topToBottom Animation*/
