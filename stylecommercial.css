@@ -411,8 +411,9 @@ footer {
 /* Ordkarusell */
 
 .word-wrap {
+  position: relative;
   width: 100%;
-  margin-top: 40%;
+  top: 40%;
 }
 
 .sentence{
