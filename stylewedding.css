@@ -155,6 +155,18 @@ header img {
     display: none;
   }
 
+  .show {
+    left: calc(80% - 10rem)
+  }
+
+  .show2 {
+    left: calc(50% - 10rem)
+  }
+
+  .show3 {
+    left: calc(20% - 10rem)
+  }
+
   #silver {
     display: inline-block;
     left: calc(20% - 10rem);
@@ -169,7 +181,6 @@ header img {
     display: inline-block;
     left: calc(80% - 10rem);
   }
-
 
 
 }
@@ -442,6 +453,7 @@ footer {
 }
 
 
+/* One card */
 
 @keyframes moveInLeft {
   0% {
@@ -483,6 +495,8 @@ footer {
     left: -90vw
   }
 }
+
+/* Two cards */
 
 @keyframes moveLeft {
   0% {

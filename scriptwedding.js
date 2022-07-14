@@ -186,12 +186,12 @@ const resize = () => {
         products.cardList[products.state].classList.add("show")
         products.cardList[(products.state+1)%3].classList.remove("show2")
         workflow.cardList[workflow.state].classList.add("show")
-        workflow.cardList[(workflow.state+1)%3].classList.remove("show2")
+        workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
     } else {
         products.cardList[products.state].classList.add("show")
         products.cardList[(products.state+1)%3].classList.add("show2")
         workflow.cardList[workflow.state].classList.add("show")
-        workflow.cardList[(workflow.state+1)%3].classList.add("show2")
+        workflow.cardList[(workflow.state+1)%4].classList.add("show2")
     }
 }
 
