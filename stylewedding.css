@@ -135,7 +135,7 @@ header img {
   width: 17rem;
 }
 
-.show {
+.show1 {
   display: inline-block;
 }
 
@@ -145,7 +145,7 @@ header img {
     left: calc(75% - 10rem);
   }
 
-  .show {
+  .show1 {
     left: calc(25% - 10rem);
   }
 }
@@ -156,7 +156,7 @@ header img {
     display: none;
   }
 
-  .show {
+  .show1 {
     left: calc(20% - 10rem)
   }
 
@@ -457,7 +457,7 @@ footer {
 
 /* One card */
 
-@keyframes moveRightIn {
+@keyframes moveRight1In {
   0% {
     /* transform: translateX(-100vw);   */
     left: -90vw
@@ -469,7 +469,7 @@ footer {
   }
 }
 
-@keyframes moveLeftIn {
+@keyframes moveLeft1In {
   0% {
     left: 110vw
   }
@@ -478,7 +478,7 @@ footer {
   }
 }
 
-@keyframes moveRightOut {
+@keyframes moveRight1Out {
   0% {
     /* transform: translateX(0vw);   */
     left: calc(50% - 10rem)
@@ -489,7 +489,7 @@ footer {
   }
 }
 
-@keyframes moveLeftOut {
+@keyframes moveLeft1Out {
   0% {
     left: calc(50% - 10rem)
   }
@@ -500,7 +500,7 @@ footer {
 
 /* Two cards */
 
-@keyframes moveLeftTwoIn {
+@keyframes moveLeft2In {
   0% {
     left: 110vw
   }
@@ -509,7 +509,7 @@ footer {
   }
 }
 
-@keyframes moveLeftTwo {
+@keyframes moveLeft21 {
   0% {
     left: calc(75%-10rem)
   }
@@ -519,7 +519,7 @@ footer {
 }
 
 
-@keyframes moveLeftTwoOut {
+@keyframes moveLeft2Out {
   0% {
     left: calc(25% -10rem)
   }
@@ -528,7 +528,7 @@ footer {
   }
 }
 
-@keyframes moveRightTwoIn {
+@keyframes moveRight2In {
   0% {
     left: -90vw
   }
@@ -537,7 +537,7 @@ footer {
   }
 }
 
-@keyframes moveRightTwo {
+@keyframes moveRight21 {
   0% {
     left: calc(25%-10rem)
   }
@@ -547,7 +547,7 @@ footer {
 }
 
 
-@keyframes moveRightTwoOut {
+@keyframes moveRight2Out {
   0% {
     left: calc(75% -10rem)
   }
@@ -558,7 +558,7 @@ footer {
 
 /* Three cards */
 
-@keyframes moveLeftThreeOut {
+@keyframes moveLeft3Out {
   0% {
     left: calc(20% - 10rem);
   }
@@ -567,7 +567,7 @@ footer {
   }
 }
 
-@keyframes moveLeftThree1 {
+@keyframes moveLeft31 {
   0% {
     left: calc(50% - 10rem)
   }
@@ -576,7 +576,7 @@ footer {
   }
 }
 
-@keyframes moveLeftThree2 {
+@keyframes moveLeft32 {
   0% {
     left: calc(80% - 10rem)
   }
@@ -585,7 +585,7 @@ footer {
   }
 }
 
-@keyframes moveLeftThreeIn {
+@keyframes moveLeft3In {
   0% {
     left: 110vw
   }
@@ -594,7 +594,7 @@ footer {
   }
 }
 
-@keyframes moveRightThreeIn {
+@keyframes moveRight3In {
   0% {
     left: -90vw
   }
@@ -603,7 +603,7 @@ footer {
   }
 }
 
-@keyframes moveRightThree1 {
+@keyframes moveRight31 {
   0% {
     left: calc(20% - 10rem)
   }
@@ -612,7 +612,7 @@ footer {
   }
 }
 
-@keyframes moveRightThree2 {
+@keyframes moveRight32 {
   0% {
     left: calc(50% - 10rem)
   }
@@ -621,7 +621,7 @@ footer {
   }
 }
 
-@keyframes moveRightThreeOut {
+@keyframes moveRight3Out {
   0% {
     left: calc(80% - 10rem)
   }
