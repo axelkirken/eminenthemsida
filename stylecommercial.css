@@ -22,8 +22,19 @@ header {
   height: 100VH;
 }
 
+.header-bar {
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: 0%;
+  background-color: #000000;
+  background-color: rgba(0,0,0, 0.7);
+  z-index: 1;
+  transition: top 0.3s;
+}
+
 header img {
-  position: relative;
+  display: inline-block;
   height: 4VH;
   margin: 10px 10px;
   z-index: 1;
@@ -31,11 +42,11 @@ header img {
 
 /* Menyknapp på mobil */
 .menu-button {
-  position: absolute;
+  float: right;
+  display: block;
   height: 4VH;
-  top: 10px;
-  right: 10px;
-  font-size: 2.2em;
+  margin: 5px 10px;
+  font-size: 6VH;
 }
 
 #background-video {
@@ -47,8 +58,7 @@ header img {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 0;
-
+  z-index: -1;
 }
 
 /* Navigation för mobil */
@@ -280,7 +290,6 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
-
 }
 
 
@@ -378,7 +387,7 @@ footer {
 
 .word-wrap {
   width: 100%;
-
+  margin-top: 40%;
 }
 
 .sentence{
