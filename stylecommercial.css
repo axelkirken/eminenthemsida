@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
   margin: 0px;
@@ -20,9 +24,18 @@ header {
 
 header img {
   position: relative;
-  width: 15em;
+  height: 4VH;
   margin: 10px 10px;
   z-index: 1;
+}
+
+/* Menyknapp på mobil */
+.menu-button {
+  position: absolute;
+  height: 4VH;
+  top: 10px;
+  right: 10px;
+  font-size: 2.2em;
 }
 
 #background-video {
@@ -38,6 +51,48 @@ header img {
 
 }
 
+/* Navigation för mobil */
+.nav-overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.7);
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(8px);
+}
+
+.nav-overlay .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3.6em;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nav-overlay-content a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+
+.nav-overlay-content a:hover {
+  color: rgb(54, 54, 54);
+}
 /* Budskap, kvalitet och produkter */
 
 .message, .quality, .possibility {
