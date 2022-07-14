@@ -135,33 +135,74 @@ const moveRightTwo = (obj) => {
 
 
 const moveLeftThree = () => {
-    let cardList = obj.cardList;
-    let state = obj.state;
+    let cardList = workflow.cardList;
+    let state = workflow.state;
     let i = cardList.length;
 
     let oldCard = cardList[state];
-    let middleCard = cardList[(state+1)%i];
-    let newCard = cardList[(state+2)%i];
+    let middleCard1 = cardList[(state+1)%i];
+    let middleCard2 = cardList[(state+2)%i];
+    let newCard = cardList[(state+3)%i];
     if (oldCard.style.animation !== "") return;
-    if (middleCard.style.animation !== "") return;
+    if (middleCard1.style.animation !== "") return;
     if (newCard.style.animation !== "") return;
-    obj.state = (state + 1) % i;
+    workflow.state = (state + 1) % i;
     
 
-    newCard.classList.add("show2")
-    newCard.style.animation = "moveInRightTwo ease-in-out " + animationSpeed;
-    oldCard.style.animation = "moveOutLeftTwo ease-in-out " + animationSpeed;
-    middleCard.style.animation = "moveLeft ease-in-out " + animationSpeed;
+    newCard.classList.add("show3")
+    newCard.style.animation = "moveLeftThreeIn ease-in-out " + animationSpeed;
+    oldCard.style.animation = "moveLeftThreeOut ease-in-out " + animationSpeed;
+    middleCard1.style.animation = "moveLeftThree1 ease-in-out " + animationSpeed;
+    middleCard2.style.animation = "moveLeftThree2 ease-in-out " + animationSpeed;
     
     setTimeout(() => {
-        middleCard.classList.remove("show2")
-        middleCard.classList.add("show")
+        middleCard1.classList.remove("show2")
+        middleCard1.classList.add("show")
+        middleCard2.classList.remove("show3")
+        middleCard2.classList.add("show2")
         oldCard.classList.remove("show");
         oldCard.style.animation = ""
-        middleCard.style.animation = ""
+        middleCard1.style.animation = ""
+        middleCard2.style.animation = ""
         newCard.style.animation = ""
     }, speed-2);  
 }
+
+
+const moveRightThree = () => {
+    let cardList = workflow.cardList;
+    let state = workflow.state;
+    let i = cardList.length;
+
+    let oldCard = cardList[(state+2)%i];
+    let middleCard1 = cardList[(state)%i];
+    let middleCard2 = cardList[(state+1)%i];
+    let newCard = cardList[(state+i-1)%i];
+    if (oldCard.style.animation !== "") return;
+    if (middleCard1.style.animation !== "") return;
+    if (newCard.style.animation !== "") return;
+    workflow.state = (state + i-1) % i;
+    
+
+    newCard.classList.add("show")
+    newCard.style.animation = "moveRightThreeIn ease-in-out " + animationSpeed;
+    oldCard.style.animation = "moveRightThreeOut ease-in-out " + animationSpeed;
+    middleCard1.style.animation = "moveRightThree1 ease-in-out " + animationSpeed;
+    middleCard2.style.animation = "moveRightThree2 ease-in-out " + animationSpeed;
+    
+    setTimeout(() => {
+        middleCard1.classList.remove("show")
+        middleCard1.classList.add("show2")
+        middleCard2.classList.remove("show2")
+        middleCard2.classList.add("show3")
+        oldCard.classList.remove("show3");
+        oldCard.style.animation = ""
+        middleCard1.style.animation = ""
+        middleCard2.style.animation = ""
+        newCard.style.animation = ""
+    }, speed-2);  
+}
+
 
 
 const moveLeftProduct = () => {
@@ -184,34 +225,57 @@ const moveRightProduct = () => {
 
 
 const moveLeftWorkflow = () => {
-    if (workflow.state === 0) {
-        leftArrow2.style.background = "#ce8b7e"
-    }
     if (window.matchMedia("(max-width: 767px)").matches) {
         if (workflow.state === 3) return;
         moveLeftOne(workflow)
+        size ="s"
     } else if (window.matchMedia("(max-width: 991px").matches) {
         if (workflow.state === 2) return;
         moveLeftTwo(workflow)
+        size="m"
     } else {
         if (workflow.state === 1) return;
         moveLeftThree()
+        size="l"
     }
+    changeColor(size)
 }
 
 const moveRightWorkflow = () => {
     if (workflow.state === 0) return;
+    let size = ""
     if (window.matchMedia("(max-width: 767px").matches) {
         moveRightOne(workflow)
+        size = "s"
     } else if (window.matchMedia("(max-width: 991px").matches) {
         moveRightTwo(workflow)
+        size = "m"
     } else {
-        return
+        moveRightThree();
+        size = "l";
     }
+    changeColor(size)
+}
 
-    if (workflow.state === 0) {
+
+const changeColor = (size) => {
+    const state = workflow.state;
+    if (state === 0) {
         leftArrow2.style.background = "#cea198"
+    } else leftArrow2.style.background = "#ce8b7e"
+    var background;
+    switch (size) {
+        case "s": 
+            background = ((state ===3)? "#cea198" : "#ce8b7e");
+            break 
+        case "m":
+            background = ((state ===2)? "#cea198" : "#ce8b7e");
+            break
+        case "l":
+            background = ((state ===1)? "#cea198" : "#ce8b7e");
+            break
     }
+    rightArrow2.style.background = background
 }
 
 

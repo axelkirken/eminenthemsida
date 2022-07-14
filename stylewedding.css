@@ -124,6 +124,7 @@ header img {
   background-color: #ce8b7e;
   border-radius: 50%;
   user-select: none;
+  transition: background-color 0.5s;
 }
 
 .arrow:hover {
@@ -198,7 +199,7 @@ header img {
 
 .staff img {
   margin: 10px 10px;
-  width: 60%;
+  width: 40%;
 }
 
 .staff .text {
@@ -550,5 +551,77 @@ footer {
   }
   100% {
     left: calc(110vw)
+  }
+}
+
+@keyframes moveLeftThreeOut {
+  0% {
+    left: calc(20% - 10rem);
+  }
+  100% {
+    left: -90vw;
+  }
+}
+
+@keyframes moveLeftThree1 {
+  0% {
+    left: calc(50% - 10rem)
+  }
+  100% {
+    left: calc(20% - 10rem)
+  }
+}
+
+@keyframes moveLeftThree2 {
+  0% {
+    left: calc(80% - 10rem)
+  }
+  100% {
+    left: calc(50% - 10rem)
+  }
+}
+
+@keyframes moveLeftThreeIn {
+  0% {
+    left: 110vw
+  }
+  100% {
+    left: calc(80% - 10rem)
+  }
+}
+
+@keyframes moveRightThreeIn {
+  0% {
+    left: -90vw
+  }
+  100% {
+    left: calc(20% - 10rem)
+  }
+}
+
+@keyframes moveRightThree1 {
+  0% {
+    left: calc(20% - 10rem)
+  }
+  100% {
+    left: calc(50% - 10rem)
+  }
+}
+
+@keyframes moveRightThree2 {
+  0% {
+    left: calc(50% - 10rem)
+  }
+  100% {
+    left: calc(80% - 10rem)
+  }
+}
+
+@keyframes moveRightThreeOut {
+  0% {
+    left: calc(80% - 10rem)
+  }
+  100% {
+    left: 110vw
   }
 }
