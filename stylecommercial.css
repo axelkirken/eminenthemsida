@@ -1,3 +1,8 @@
+:root {
+  --opaque-black: rgba(0,0,0, 0.7);
+  --opaque-black-highlight: rgba(0.2, 0.2, 0.2, 0.7);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,16 +32,16 @@ header {
   display: block;
   width: 100%;
   top: 0%;
-  background-color: #000000;
-  background-color: rgba(0,0,0, 0.7);
+  background-color: var(--opaque-black);
   z-index: 1;
   transition: top 0.3s;
 }
 
 header img {
   display: inline-block;
+  vertical-align: top;
   height: 4VH;
-  margin: 10px 10px;
+  padding: 10px 10px;
   z-index: 1;
 }
 
@@ -45,8 +50,24 @@ header img {
   float: right;
   display: block;
   height: 4VH;
-  margin: 5px 10px;
+  padding: 5px 10px;
   font-size: 6VH;
+}
+
+.nav-bar-item {
+  display: none;
+  float: right;
+  height: 4VH;
+  padding: 10px 10px;
+}
+
+.header-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar-item:hover {
+  background-color: rgb(25, 25, 25);
 }
 
 #background-video {
@@ -69,8 +90,7 @@ header img {
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.7);
+  background-color: var(--opaque-black);
   overflow: hidden;
   transition: 0.5s;
   backdrop-filter: blur(8px);
@@ -341,14 +361,17 @@ footer {
   .contact .form {
     width: 30%;
   }
-
-
 }
 
 
 @media only screen and (min-width: 992px) {
+  /* Adjust menu bar for wider screen */
   .menu-button {
     display: none;
+  }
+
+  .nav-bar-item {
+    display: block;
   }
 
   .message img, .quality img, .possibility img {
