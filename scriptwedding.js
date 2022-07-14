@@ -206,54 +206,52 @@ const moveRightThree = () => {
 
 
 const moveLeftProduct = () => {
-    let screenSmall = window.matchMedia("(max-width: 768px)")
-    if (screenSmall.matches) {
-        moveLeftOne(products)
-    } else {
+    if (window.matchMedia("(min-width: 768px)").matches) {
         moveLeftTwo(products)
+    } else {
+        moveLeftOne(products)
     }
 }
 
 const moveRightProduct = () => {
-    const screenSmall = window.matchMedia("(max-width: 768px")
-    if (screenSmall.matches) {
-        moveRightOne(products)
-    } else {
+    if (window.matchMedia("(min-width: 768px)").matches) {
         moveRightTwo(products)
+    } else {
+        moveRightOne(products)
     }
 }
 
 
 const moveLeftWorkflow = () => {
-    if (window.matchMedia("(max-width: 767px)").matches) {
-        if (workflow.state === 3) return;
-        moveLeftOne(workflow)
-        size ="s"
-    } else if (window.matchMedia("(max-width: 991px").matches) {
+    if (window.matchMedia("(min-width: 992px").matches) {
+        if (workflow.state === 1) return;
+        moveLeftThree()
+        size="l"
+    } else if (window.matchMedia("(min-width: 768px").matches) {
         if (workflow.state === 2) return;
         moveLeftTwo(workflow)
         size="m"
     } else {
-        if (workflow.state === 1) return;
-        moveLeftThree()
-        size="l"
-    }
+        if (workflow.state === 3) return;
+        moveLeftOne(workflow)
+        size ="s"
+    } 
     changeColor(size)
 }
 
 const moveRightWorkflow = () => {
     if (workflow.state === 0) return;
     let size = ""
-    if (window.matchMedia("(max-width: 767px").matches) {
-        moveRightOne(workflow)
-        size = "s"
-    } else if (window.matchMedia("(max-width: 991px").matches) {
+    if (window.matchMedia("(min-width: 992px").matches){
+        moveRightThree();
+        size = "l";
+    } else if (window.matchMedia("(min-width: 768px").matches) {
         moveRightTwo(workflow)
         size = "m"
     } else {
-        moveRightThree();
-        size = "l";
-    }
+        moveRightOne(workflow)
+        size = "s"
+    } 
     changeColor(size)
 }
 
@@ -286,12 +284,18 @@ leftArrow2.addEventListener("click", moveRightWorkflow);
 
 
 const resize = () => {
-    if (window.matchMedia("(max-width: 767px)").matches) {
-        products.cardList[products.state].classList.add("show")
-        products.cardList[(products.state+1)%3].classList.remove("show2")
+    let size
+    if (window.matchMedia("(min-width: 992px)").matches)  {
+        if (workflow.state >= 2) {
+            workflow.cardList[workflow.state].classList.remove("show")
+            workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
+            workflow.state = 1;
+        }
         workflow.cardList[workflow.state].classList.add("show")
-        workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
-    } else if (window.matchMedia("(max-width: 991px)").matches) {
+        workflow.cardList[(workflow.state+1)%4].classList.add("show2")
+        workflow.cardList[(workflow.state+2)%4].classList.add("show3")
+        size="l"
+    } else if (window.matchMedia("(min-width: 768px)").matches) {
         products.cardList[products.state].classList.add("show")
         products.cardList[(products.state+1)%3].classList.add("show2")
         if (workflow.state === 3) {
@@ -301,16 +305,15 @@ const resize = () => {
         workflow.cardList[workflow.state].classList.add("show")
         workflow.cardList[(workflow.state+1)%4].classList.add("show2")
         workflow.cardList[(workflow.state+2)%4].classList.remove("show3")
+        size="m"
     } else {
-        if (workflow.state >= 2) {
-            workflow.cardList[workflow.state].classList.remove("show")
-            workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
-            workflow.state = 1;
-        }
+        products.cardList[products.state].classList.add("show")
+        products.cardList[(products.state+1)%3].classList.remove("show2")
         workflow.cardList[workflow.state].classList.add("show")
-        workflow.cardList[(workflow.state+1)%4].classList.add("show2")
-        workflow.cardList[(workflow.state+2)%4].classList.add("show3")
-    }
+        workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
+        size="s"
+    } 
+    changeColor(size);
 }
 
 window.addEventListener("resize", resize)
