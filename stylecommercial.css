@@ -331,7 +331,6 @@ footer {
   font-size: 2.5em;
   color: white;
   z-index: 1;
-  overflow: hidden;
 }
 
 .constant_words {
@@ -380,28 +379,28 @@ footer {
 /*topToBottom Animation*/
 @-moz-keyframes topToBottom{
 	0% { opacity: 0; }
-	5% { opacity: 0; -moz-transform: translateY(-50px) scale(0.8,0.8); }
-	10% { opacity: 1; -moz-transform: translateY(0px) scale(1,1); }
-	25% { opacity: 1; -moz-transform: translateY(0px) scale(1,1); }
-	30% { opacity: 0; -moz-transform: translateY(50px) scale(0.8,0.8); }
+	5% { opacity: 0; -moz-transform: translateY(-50px) scale(0.8,0.8) rotateX(-90deg); }
+	10% { opacity: 1; -moz-transform: translateY(0px) scale(1,1) rotateX(0deg); }
+	25% { opacity: 1; -moz-transform: translateY(0px) scale(1,1) rotateX(0deg); }
+	30% { opacity: 0; -moz-transform: translateY(50px) scale(0.8,0.8) rotateX(90deg); }
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
 @-webkit-keyframes topToBottom{
 	0% { opacity: 0; }
-	5% { opacity: 0; -webkit-transform: translateY(-50px) scale(0.8,0.8)}
-	10% { opacity: 1; -webkit-transform: translateY(0px) scale(1,1)}
-	25% { opacity: 1; -webkit-transform: translateY(0px) scale(1,1)}
-	30% { opacity: 0; -webkit-transform: translateY(50px) scale(0.8,0.8)}
+	5% { opacity: 0; -webkit-transform: translateY(-50px) scale(0.8,0.8) rotateX(-90deg)}
+	10% { opacity: 1; -webkit-transform: translateY(0px) scale(1,1) rotateX(0deg)}
+	25% { opacity: 1; -webkit-transform: translateY(0px) scale(1,1) rotateX(0deg)}
+	30% { opacity: 0; -webkit-transform: translateY(50px) scale(0.8,0.8) rotateX(90deg)}
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
 @-ms-keyframes topToBottom{
 	0% { opacity: 0; }
-	5% { opacity: 0; -ms-transform: translateY(-50px) scale(0.8,0.8); }
-	10% { opacity: 1; -ms-transform: translateY(0px) scale(1,1); }
-	25% { opacity: 1; -ms-transform: translateY(0px) scale(1,1); }
-	30% { opacity: 0; -ms-transform: translateY(50px) scale(0.8,0.8); }
+	5% { opacity: 0; -ms-transform: translateY(-50px) scale(0.8,0.8) rotateX(-90deg); }
+	10% { opacity: 1; -ms-transform: translateY(0px) scale(1,1) rotateX(0deg); }
+	25% { opacity: 1; -ms-transform: translateY(0px) scale(1,1) rotateX(0deg); }
+	30% { opacity: 0; -ms-transform: translateY(50px) scale(0.8,0.8) rotateX(90deg); }
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
