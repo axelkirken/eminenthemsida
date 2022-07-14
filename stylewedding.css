@@ -151,12 +151,12 @@ header img {
 
 
 @media only screen and (min-width: 992px) {
-  .arrows {
+  .products .arrows {
     display: none;
   }
 
   .show {
-    left: calc(80% - 10rem)
+    left: calc(20% - 10rem)
   }
 
   .show2 {
@@ -164,7 +164,8 @@ header img {
   }
 
   .show3 {
-    left: calc(20% - 10rem)
+    display: inline-block;
+    left: calc(80% - 10rem)
   }
 
   #silver {

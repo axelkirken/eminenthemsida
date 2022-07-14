@@ -134,6 +134,36 @@ const moveRightTwo = (obj) => {
 }
 
 
+const moveLeftThree = () => {
+    let cardList = obj.cardList;
+    let state = obj.state;
+    let i = cardList.length;
+
+    let oldCard = cardList[state];
+    let middleCard = cardList[(state+1)%i];
+    let newCard = cardList[(state+2)%i];
+    if (oldCard.style.animation !== "") return;
+    if (middleCard.style.animation !== "") return;
+    if (newCard.style.animation !== "") return;
+    obj.state = (state + 1) % i;
+    
+
+    newCard.classList.add("show2")
+    newCard.style.animation = "moveInRightTwo ease-in-out " + animationSpeed;
+    oldCard.style.animation = "moveOutLeftTwo ease-in-out " + animationSpeed;
+    middleCard.style.animation = "moveLeft ease-in-out " + animationSpeed;
+    
+    setTimeout(() => {
+        middleCard.classList.remove("show2")
+        middleCard.classList.add("show")
+        oldCard.classList.remove("show");
+        oldCard.style.animation = ""
+        middleCard.style.animation = ""
+        newCard.style.animation = ""
+    }, speed-2);  
+}
+
+
 const moveLeftProduct = () => {
     let screenSmall = window.matchMedia("(max-width: 768px)")
     if (screenSmall.matches) {
@@ -154,23 +184,33 @@ const moveRightProduct = () => {
 
 
 const moveLeftWorkflow = () => {
-    let screenSmall = window.matchMedia("(max-width: 768px)")
-    if (screenSmall.matches) {
+    if (workflow.state === 0) {
+        leftArrow2.style.background = "#ce8b7e"
+    }
+    if (window.matchMedia("(max-width: 767px)").matches) {
         if (workflow.state === 3) return;
         moveLeftOne(workflow)
-    } else {
+    } else if (window.matchMedia("(max-width: 991px").matches) {
         if (workflow.state === 2) return;
         moveLeftTwo(workflow)
+    } else {
+        if (workflow.state === 1) return;
+        moveLeftThree()
     }
 }
 
 const moveRightWorkflow = () => {
     if (workflow.state === 0) return;
-    const screenSmall = window.matchMedia("(max-width: 768px")
-    if (screenSmall.matches) {
+    if (window.matchMedia("(max-width: 767px").matches) {
         moveRightOne(workflow)
-    } else {
+    } else if (window.matchMedia("(max-width: 991px").matches) {
         moveRightTwo(workflow)
+    } else {
+        return
+    }
+
+    if (workflow.state === 0) {
+        leftArrow2.style.background = "#cea198"
     }
 }
 
@@ -182,16 +222,30 @@ leftArrow2.addEventListener("click", moveRightWorkflow);
 
 
 const resize = () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 767px)").matches) {
         products.cardList[products.state].classList.add("show")
         products.cardList[(products.state+1)%3].classList.remove("show2")
         workflow.cardList[workflow.state].classList.add("show")
         workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
-    } else {
+    } else if (window.matchMedia("(max-width: 991px)").matches) {
         products.cardList[products.state].classList.add("show")
         products.cardList[(products.state+1)%3].classList.add("show2")
+        if (workflow.state === 3) {
+            workflow.cardList[workflow.state].classList.remove("show")
+            workflow.state = 2;
+        }
         workflow.cardList[workflow.state].classList.add("show")
         workflow.cardList[(workflow.state+1)%4].classList.add("show2")
+        workflow.cardList[(workflow.state+2)%4].classList.remove("show3")
+    } else {
+        if (workflow.state >= 2) {
+            workflow.cardList[workflow.state].classList.remove("show")
+            workflow.cardList[(workflow.state+1)%4].classList.remove("show2")
+            workflow.state = 1;
+        }
+        workflow.cardList[workflow.state].classList.add("show")
+        workflow.cardList[(workflow.state+1)%4].classList.add("show2")
+        workflow.cardList[(workflow.state+2)%4].classList.add("show3")
     }
 }
 
