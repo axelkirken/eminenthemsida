@@ -29,7 +29,6 @@ header img {
   width: 100%;
   height: 100%;
   position: absolute;
-  object-fit: cover;
   left: 0;
   right: 0;
   top: 0;
@@ -62,16 +61,39 @@ header img {
 }
 
 
-/* Paket */
+/* Paket och Så går det till*/
 
 .products, .workflow {
+  position: relative;
+  z-index: 10;
   background-color: #a66d62;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .products h1, .workflow h1 {
+  position: relative;
   padding: 10px 0px 0px 0px;
   margin: 0;
+}
+
+canvas{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.workflow img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  object-fit: cover;
 }
 
 .cards {
@@ -79,7 +101,8 @@ header img {
   position: relative;
   white-space: nowrap;
   overflow-x: hidden;
-  height: 21em;
+  height: 18em;
+  width: 100%;
   line-height: 1.2em;
 }
 
@@ -92,7 +115,6 @@ header img {
   width: 20rem;
   background-image: url("images/paper.jpeg");
   color: #181818;
-  padding: 2vw 2vw; 
   margin: 0px 0px;
   text-align: center;
   display: none;
@@ -101,15 +123,19 @@ header img {
   text-shadow:0 -1px 0 #515050;
 }
 
+.card p {
+  margin: 10px 10px;
+}
+
 .card ul {
+  margin: 10px 10px;
   list-style: none;
   padding-left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  
 }
 
 .arrows {
+  position: relative;
+  z-index: 10;
   text-align: center;
   font-size: 2em;
 }
@@ -129,33 +155,30 @@ header img {
 
 .arrow:hover {
   cursor: pointer;
+  background-color: #b6786d;
 }
 
-.workflow .card {
-  width: 17rem;
+.lightArrow, .lightArrow:hover {
+  background-color: #cea198;
 }
 
 .show1 {
   display: inline-block;
 }
 
+
 @media only screen and (min-width: 768px) {
+  .show1 {
+    left: calc(25% - 10rem);
+  }
+  
   .show2 {
     display: inline-block;
     left: calc(75% - 10rem);
   }
-
-  .show1 {
-    left: calc(25% - 10rem);
-  }
 }
 
-
-@media only screen and (min-width: 992px) {
-  .products .arrows {
-    display: none;
-  }
-
+@media only screen and (min-width: 1100px) {
   .show1 {
     left: calc(20% - 10rem)
   }
@@ -184,13 +207,15 @@ header img {
     left: calc(80% - 10rem);
   }
 
-
+  .products .arrows {
+    display: none;
+  }
 }
-
 
 
 /* Om oss */
 .staff {
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -276,12 +301,14 @@ header img {
 }
 
 footer {
-  padding: 2em 2em;
+  margin-top: 10px;
+  padding: 1em 2em;
   color: white;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
+  background-color: #a66d62;
 
 }
 
@@ -334,12 +361,10 @@ footer {
   .contact .form {
     width: 30%;
   }
-
-
 }
 
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1100px) {
   .message img, .possibility img {
     margin-left: 30px;
     margin-right: 50px;
@@ -460,7 +485,7 @@ footer {
 @keyframes moveRight1In {
   0% {
     /* transform: translateX(-100vw);   */
-    left: -90vw
+    left: -25rem;
   }
   100% {
     /* transform: translateX(0vw); */
@@ -494,7 +519,7 @@ footer {
     left: calc(50% - 10rem)
   }
   100% {
-    left: -90vw
+    left: -25rem;
   }
 }
 
@@ -511,7 +536,7 @@ footer {
 
 @keyframes moveLeft21 {
   0% {
-    left: calc(75%-10rem)
+    left: calc(75% - 10rem)
   }
   100% {
     left: calc(25% - 10rem)
@@ -521,16 +546,16 @@ footer {
 
 @keyframes moveLeft2Out {
   0% {
-    left: calc(25% -10rem)
+    left: calc(25% - 10rem)
   }
   100% {
-    left: calc(-90vw)
+    left: -25rem
   }
 }
 
 @keyframes moveRight2In {
   0% {
-    left: -90vw
+    left: -25rem
   }
   100% {
     left: calc(25% - 10rem)
@@ -539,7 +564,7 @@ footer {
 
 @keyframes moveRight21 {
   0% {
-    left: calc(25%-10rem)
+    left: calc(25% - 10rem)
   }
   100% {
     left: calc(75% - 10rem)
@@ -549,7 +574,7 @@ footer {
 
 @keyframes moveRight2Out {
   0% {
-    left: calc(75% -10rem)
+    left: calc(75% - 10rem)
   }
   100% {
     left: calc(110vw)
@@ -563,7 +588,7 @@ footer {
     left: calc(20% - 10rem);
   }
   100% {
-    left: -90vw;
+    left: -25rem;
   }
 }
 
@@ -596,7 +621,7 @@ footer {
 
 @keyframes moveRight3In {
   0% {
-    left: -90vw
+    left: -25rem
   }
   100% {
     left: calc(20% - 10rem)
