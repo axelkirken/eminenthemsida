@@ -1,20 +1,22 @@
+//Elements products
 const leftArrow = document.getElementById("leftArrow");
 const rightArrow = document.getElementById("rightArrow");
 const diamond = document.getElementById("diamond");
 const silver = document.getElementById("silver");
 const gold = document.getElementById("gold");
 
-let speed = 1000;
-let animationSpeed = String(speed / 1000) + "s";
-
+//Elements workflow
 const firstStep = document.getElementById("firstStep");
 const secondStep = document.getElementById("secondStep");
 const thirdStep = document.getElementById("thirdStep");
 const fourthStep = document.getElementById("fourthStep");
 const leftArrow2 = document.getElementById("leftArrow2");
-const rightArrow2 = document.getElementById("rightArrow2")
+const rightArrow2 = document.getElementById("rightArrow2");
 
+let speed = 1000;
+let animationSpeed = String(speed / 1000) + "s";
 
+//Carousel objects
 const products = {
     cardList: [silver, gold, diamond],
     state: 1,
@@ -25,81 +27,67 @@ const workflow = {
     state: 0,
 }
 
+//One card
 
 const moveRightOne = (obj) => {
-    // Select new card
     let cardList = obj.cardList;
     let state = obj.state;
     let i = cardList.length;
-
     let oldCard = cardList[state];
     let newCard = cardList[(state+i-1)%i];
-    
     if (oldCard.style.animation !== "") return;
-
     obj.state = (state + i-1) % i;
-    
-    oldCard.style.animation = "moveOutRight ease-in-out " + animationSpeed
-    newCard.style.animation = "moveInLeft ease-in-out " + animationSpeed
-    newCard.classList.toggle("show"); 
-
+    oldCard.style.animation = "moveRightOut ease-in-out " + animationSpeed;
+    newCard.style.animation = "moveRightIn ease-in-out " + animationSpeed;
+    newCard.classList.add("show"); 
     setTimeout(() => {
-        oldCard.classList.toggle("show");
-        oldCard.style.animation = ""
-        newCard.style.animation = ""
+        oldCard.classList.remove("show");
+        oldCard.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);    
 }
 
 
 const moveLeftOne = (obj) => {
-    // Select new card
     let cardList = obj.cardList;
     let state = obj.state;
     let i = cardList.length;
-
     let oldCard = cardList[state];
     let newCard = cardList[(state+1)%i];
     if (oldCard.style.animation !== "") return;
     obj.state = (state + 1) % i;
-    
-    oldCard.style.animation = "moveOutLeft ease-in-out " + animationSpeed
-    newCard.style.animation = "moveInRight ease-in-out " + animationSpeed
-    newCard.classList.toggle("show"); 
-
+    oldCard.style.animation = "moveLeftOut ease-in-out " + animationSpeed
+    newCard.style.animation = "moveLeftIn ease-in-out " + animationSpeed
+    newCard.classList.add("show"); 
     setTimeout(() => {
-        oldCard.classList.toggle("show");
-        oldCard.style.animation = ""
-        newCard.style.animation = ""
+        oldCard.classList.remove("show");
+        oldCard.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);    
 }
 
+// Two cards
 
 const moveLeftTwo = (obj) => {
     let cardList = obj.cardList;
     let state = obj.state;
     let i = cardList.length;
-
     let oldCard = cardList[state];
     let middleCard = cardList[(state+1)%i];
     let newCard = cardList[(state+2)%i];
-    if (oldCard.style.animation !== "") return;
-    if (middleCard.style.animation !== "") return;
-    if (newCard.style.animation !== "") return;
+    if (oldCard.style.animation !== "" || middleCard.style.animation !== "") return;
     obj.state = (state + 1) % i;
-    
-
+    oldCard.style.animation = "moveLeftTwoOut ease-in-out " + animationSpeed;
+    middleCard.style.animation = "moveLeftTwo ease-in-out " + animationSpeed;
+    newCard.style.animation = "moveLeftTwoIn ease-in-out " + animationSpeed;
     newCard.classList.add("show2")
-    newCard.style.animation = "moveInRightTwo ease-in-out " + animationSpeed;
-    oldCard.style.animation = "moveOutLeftTwo ease-in-out " + animationSpeed;
-    middleCard.style.animation = "moveLeft ease-in-out " + animationSpeed;
-    
     setTimeout(() => {
-        middleCard.classList.remove("show2")
-        middleCard.classList.add("show")
         oldCard.classList.remove("show");
-        oldCard.style.animation = ""
-        middleCard.style.animation = ""
-        newCard.style.animation = ""
+        middleCard.classList.remove("show2");
+        middleCard.classList.add("show");
+        oldCard.style.animation = "";
+        middleCard.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);  
 }
 
@@ -108,63 +96,52 @@ const moveRightTwo = (obj) => {
     let cardList = obj.cardList;
     let state = obj.state;
     let i = cardList.length;
-
     let oldCard = cardList[(state+1)%i];
     let middleCard = cardList[state];
     let newCard = cardList[(state+i-1)%i];
-    if (oldCard.style.animation !== "") return;
-    if (middleCard.style.animation !== "") return;
-    if (newCard.style.animation !== "") return;
     obj.state = (state + i-1) % i;
-    
-
-    newCard.classList.add("show")
-    newCard.style.animation = "moveInLeftTwo ease-in-out " + animationSpeed;
-    oldCard.style.animation = "moveOutRightTwo ease-in-out " + animationSpeed;
-    middleCard.style.animation = "moveRight ease-in-out " + animationSpeed;
-    
+    oldCard.style.animation = "moveRightTwoOut ease-in-out " + animationSpeed;
+    middleCard.style.animation = "moveRightTwo ease-in-out " + animationSpeed;
+    newCard.style.animation = "moveRightTwoIn ease-in-out " + animationSpeed;
+    newCard.classList.add("show");
     setTimeout(() => {
-        middleCard.classList.remove("show")
-        middleCard.classList.add("show2")
         oldCard.classList.remove("show2");
-        oldCard.style.animation = ""
-        middleCard.style.animation = ""
-        newCard.style.animation = ""
+        middleCard.classList.remove("show");
+        middleCard.classList.add("show2");
+        oldCard.style.animation = "";
+        middleCard.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);  
 }
 
+
+// Three cards - only workflow carousel
 
 const moveLeftThree = () => {
     let cardList = workflow.cardList;
     let state = workflow.state;
     let i = cardList.length;
-
     let oldCard = cardList[state];
     let middleCard1 = cardList[(state+1)%i];
     let middleCard2 = cardList[(state+2)%i];
     let newCard = cardList[(state+3)%i];
-    if (oldCard.style.animation !== "") return;
-    if (middleCard1.style.animation !== "") return;
-    if (newCard.style.animation !== "") return;
+    if (oldCard.style.animation !== "" || middleCard1.style.animation !== "") return;
     workflow.state = (state + 1) % i;
-    
-
-    newCard.classList.add("show3")
-    newCard.style.animation = "moveLeftThreeIn ease-in-out " + animationSpeed;
     oldCard.style.animation = "moveLeftThreeOut ease-in-out " + animationSpeed;
     middleCard1.style.animation = "moveLeftThree1 ease-in-out " + animationSpeed;
     middleCard2.style.animation = "moveLeftThree2 ease-in-out " + animationSpeed;
-    
+    newCard.style.animation = "moveLeftThreeIn ease-in-out " + animationSpeed;
+    newCard.classList.add("show3");
     setTimeout(() => {
-        middleCard1.classList.remove("show2")
-        middleCard1.classList.add("show")
-        middleCard2.classList.remove("show3")
-        middleCard2.classList.add("show2")
+        middleCard1.classList.remove("show2");
+        middleCard1.classList.add("show");
+        middleCard2.classList.remove("show3");
+        middleCard2.classList.add("show2");
         oldCard.classList.remove("show");
-        oldCard.style.animation = ""
-        middleCard1.style.animation = ""
-        middleCard2.style.animation = ""
-        newCard.style.animation = ""
+        oldCard.style.animation = "";
+        middleCard1.style.animation = "";
+        middleCard2.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);  
 }
 
@@ -173,33 +150,27 @@ const moveRightThree = () => {
     let cardList = workflow.cardList;
     let state = workflow.state;
     let i = cardList.length;
-
     let oldCard = cardList[(state+2)%i];
     let middleCard1 = cardList[(state)%i];
     let middleCard2 = cardList[(state+1)%i];
     let newCard = cardList[(state+i-1)%i];
-    if (oldCard.style.animation !== "") return;
-    if (middleCard1.style.animation !== "") return;
-    if (newCard.style.animation !== "") return;
+    if (oldCard.style.animation !== "" || middleCard1.style.animation !== "") return;
     workflow.state = (state + i-1) % i;
-    
-
-    newCard.classList.add("show")
-    newCard.style.animation = "moveRightThreeIn ease-in-out " + animationSpeed;
     oldCard.style.animation = "moveRightThreeOut ease-in-out " + animationSpeed;
     middleCard1.style.animation = "moveRightThree1 ease-in-out " + animationSpeed;
     middleCard2.style.animation = "moveRightThree2 ease-in-out " + animationSpeed;
-    
+    newCard.style.animation = "moveRightThreeIn ease-in-out " + animationSpeed;
+    newCard.classList.add("show");
     setTimeout(() => {
-        middleCard1.classList.remove("show")
-        middleCard1.classList.add("show2")
-        middleCard2.classList.remove("show2")
-        middleCard2.classList.add("show3")
         oldCard.classList.remove("show3");
-        oldCard.style.animation = ""
-        middleCard1.style.animation = ""
-        middleCard2.style.animation = ""
-        newCard.style.animation = ""
+        middleCard1.classList.remove("show");
+        middleCard1.classList.add("show2");
+        middleCard2.classList.remove("show2");
+        middleCard2.classList.add("show3");
+        oldCard.style.animation = "";
+        middleCard1.style.animation = "";
+        middleCard2.style.animation = "";
+        newCard.style.animation = "";
     }, speed-2);  
 }
 

@@ -457,7 +457,7 @@ footer {
 
 /* One card */
 
-@keyframes moveInLeft {
+@keyframes moveRightIn {
   0% {
     /* transform: translateX(-100vw);   */
     left: -90vw
@@ -469,7 +469,7 @@ footer {
   }
 }
 
-@keyframes moveInRight {
+@keyframes moveLeftIn {
   0% {
     left: 110vw
   }
@@ -478,7 +478,7 @@ footer {
   }
 }
 
-@keyframes moveOutRight {
+@keyframes moveRightOut {
   0% {
     /* transform: translateX(0vw);   */
     left: calc(50% - 10rem)
@@ -489,7 +489,7 @@ footer {
   }
 }
 
-@keyframes moveOutLeft {
+@keyframes moveLeftOut {
   0% {
     left: calc(50% - 10rem)
   }
@@ -500,16 +500,7 @@ footer {
 
 /* Two cards */
 
-@keyframes moveLeft {
-  0% {
-    left: calc(75%-10rem)
-  }
-  100% {
-    left: calc(25% - 10rem)
-  }
-}
-
-@keyframes moveInRightTwo {
+@keyframes moveLeftTwoIn {
   0% {
     left: 110vw
   }
@@ -518,7 +509,17 @@ footer {
   }
 }
 
-@keyframes moveOutLeftTwo {
+@keyframes moveLeftTwo {
+  0% {
+    left: calc(75%-10rem)
+  }
+  100% {
+    left: calc(25% - 10rem)
+  }
+}
+
+
+@keyframes moveLeftTwoOut {
   0% {
     left: calc(25% -10rem)
   }
@@ -527,16 +528,7 @@ footer {
   }
 }
 
-@keyframes moveRight {
-  0% {
-    left: calc(25%-10rem)
-  }
-  100% {
-    left: calc(75% - 10rem)
-  }
-}
-
-@keyframes moveInLeftTwo {
+@keyframes moveRightTwoIn {
   0% {
     left: -90vw
   }
@@ -545,7 +537,17 @@ footer {
   }
 }
 
-@keyframes moveOutRightTwo {
+@keyframes moveRightTwo {
+  0% {
+    left: calc(25%-10rem)
+  }
+  100% {
+    left: calc(75% - 10rem)
+  }
+}
+
+
+@keyframes moveRightTwoOut {
   0% {
     left: calc(75% -10rem)
   }
@@ -553,6 +555,8 @@ footer {
     left: calc(110vw)
   }
 }
+
+/* Three cards */
 
 @keyframes moveLeftThreeOut {
   0% {
