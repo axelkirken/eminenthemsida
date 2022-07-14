@@ -13,11 +13,23 @@
     <title>Eminent: Företag</title>
   </head>
   <body>
-    <header>
-      <a href="index.html"><img src="images/logoinv.png" alt=""></a>
+    <header> 
       <video id="background-video" autoplay loop muted>
-        <source src="videos/Eminent_Commercial.mov">
+        <source src="videos/Pontus_Mathilda.MOV">
       </video>
+      
+      <div class="header-bar" id="headerBar"> 
+        <a href="index.html"><img src="images/logoinv.png" alt=""></a>
+        
+        <span class="menu-button" onclick="openNav()">
+          &#9776;
+        </span>
+
+        <a href=#projects><span class="nav-bar-item">Projekt</span></a>
+        <a href=#staff><span class="nav-bar-item">Om oss</span></a>
+        <a href=#contact><span class="nav-bar-item">Kontakta oss</span></a>
+      </div>
+
       <div class="word-wrap">
         <h2 class="sentence">
           <div class="constant_words">Vi skapar er </div>
@@ -29,21 +41,19 @@
           </div>
         </h2>
       </div>
+
     </header>
-<<<<<<< Updated upstream
-=======
       
     <div class="nav-overlay" id="navOverlay" onclick=closeNav()>
       <a href="javascript:void(0)" class="close-button" onclick="closeNav()">
         &times
       </a>
-      <div class="nav-overlay-content" id="navOverlayContent">
+      <div class="nav-overlay-content">
         <a href=#projects><h2>Projekt</h2></a>
         <a href=#staff><h2>Om oss</h2></a>
         <a href=#contact><h2>Kontakta oss</h2></a>
       </div>
     </div>
->>>>>>> Stashed changes
 
     <section class="message">
       <img src="images/message_img.png">
@@ -72,7 +82,7 @@
       </ul>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="projects">
       <h1>Utvalda projekt</h1>
       <div class="videos">
         <div class="video-wrap"><iframe id="video1" src="https://www.youtube.com/embed/4ig2CqLxIvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -88,7 +98,8 @@
       <img class="mobile" src="images/partners_mobile.png">
     </section>
 
-    <section class="staff">
+    <section class="staff" id="staff">
+    
       <div class ="text">
         <h1>Om oss</h1>
         <p>Vi, Teodor Morfeldt Gadler och Axel Kierkegaard, träffades för första gången i grundskolan och har arbetat tillsammans i många år. Vår passion för film är omättlig och vi brinner för att hela tiden utveckla vårt hantverk och sträva efter nya höjder. Vi utgår ifrån Lidingö i Stockholm men åtar oss uppdrag på alla möjliga håll i landet.</p>
@@ -106,7 +117,7 @@
       <div class="video-wrap"><iframe src="https://www.youtube.com/embed/X1hS1lfunnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="text">
         <h1>Kontakta oss!</h1>
         <p>Vi vill gärna höra mer om er och era önskemål! Kontakta oss via formuläret bredvid eller på epost-adressen nedan. <br><br>info@eminentfilm.se<br><br>Prismastigen 6<br>181 55 Lidingö</p>
@@ -132,5 +143,6 @@
       Organisationsnummer 559372-3009</p>
     </footer>
 
+    <script src="scriptcommercial.js"></script>
   </body>
 </html>

@@ -1,3 +1,12 @@
+:root {
+  --opaque-black: rgba(0,0,0, 0.7);
+  --opaque-black-highlight: rgba(0.2, 0.2, 0.2, 0.7);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
   margin: 0px;
@@ -6,6 +15,7 @@ body {
   font-weight: 500;
   line-height: 1.5em;
   font-size: 1.25em;
+  overscroll-behavior: none;
 }
 
 h1 {
@@ -18,11 +28,47 @@ header {
   height: 100VH;
 }
 
-header img {
-  position: relative;
-  width: 15em;
-  margin: 10px 10px;
+.header-bar {
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: 0%;
+  background-color: var(--opaque-black);
   z-index: 1;
+  transition: top 0.3s;
+}
+
+header img {
+  display: inline-block;
+  vertical-align: top;
+  height: 4VH;
+  padding: 10px 10px;
+  z-index: 1;
+}
+
+/* Menyknapp på mobil */
+.menu-button {
+  float: right;
+  display: block;
+  height: 4VH;
+  padding: 5px 10px;
+  font-size: 6VH;
+}
+
+.nav-bar-item {
+  display: none;
+  float: right;
+  height: 4VH;
+  padding: 10px 10px;
+}
+
+.header-bar a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar-item:hover {
+  background-color: rgb(25, 25, 25);
 }
 
 #background-video {
@@ -34,12 +80,23 @@ header img {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 0;
-
+  z-index: -1;
 }
 
-<<<<<<< Updated upstream
-=======
+/* Navigation för mobil */
+.nav-overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: var(--opaque-black);
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(8px);
+}
+
 .nav-overlay .close-button {
   position: absolute;
   top: 10px;
@@ -55,20 +112,18 @@ header img {
   width: 100%;
   text-align: center;
   margin-top: 30px;
-  transition: 0.5s;
 }
 
 .nav-overlay-content a {
   display: block;
   text-decoration: none;
   color: white;
-  transition: 0.2s;
+  transition: 1s;
 }
 
 .nav-overlay-content a:hover {
   color: rgb(54, 54, 54);
 }
->>>>>>> Stashed changes
 /* Budskap, kvalitet och produkter */
 
 .message, .quality, .possibility {
@@ -256,7 +311,6 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
-
 }
 
 
@@ -308,12 +362,19 @@ footer {
   .contact .form {
     width: 30%;
   }
-
-
 }
 
 
 @media only screen and (min-width: 992px) {
+  /* Adjust menu bar for wider screen */
+  .menu-button {
+    display: none;
+  }
+
+  .nav-bar-item {
+    display: block;
+  }
+
   .message img, .quality img, .possibility img {
     margin-left: 30px;
     margin-right: 50px;
@@ -350,7 +411,7 @@ footer {
 
 .word-wrap {
   width: 100%;
-
+  margin-top: 40%;
 }
 
 .sentence{
