@@ -108,17 +108,18 @@ header img {
 
 .nav-overlay-content {
   position: relative;
-  top: 25%;
+  top: 0%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
+  transition: 0.5s;
 }
 
 .nav-overlay-content a {
   display: block;
   text-decoration: none;
   color: white;
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .nav-overlay-content a:hover {
