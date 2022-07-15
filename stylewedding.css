@@ -127,7 +127,8 @@ header img {
   color: rgb(54, 54, 54);
 }
 
-.anchor{
+/* Justerar skrollningen vid länk till samma sida */
+.anchor {
   display: block;
   position: relative;
   top: -5.5VH;
