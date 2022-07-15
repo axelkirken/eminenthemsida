@@ -33,7 +33,7 @@ header {
   width: 100%;
   top: 0%;
   background-color: var(--opaque-black);
-  z-index: 2;
+  z-index: 10;
   transition: top 0.3s;
 }
 
@@ -43,7 +43,7 @@ header img {
   vertical-align: top;
   height: 4VH;
   padding: 10px 10px;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Menyknapp på mobil */
@@ -131,8 +131,15 @@ header img {
   color: rgb(54, 54, 54);
 }
 
-/* Budskap, kvalitet och produkter */
+/* Justerar skrollningen vid länk till samma sida */
+.anchor {
+  display: block;
+  position: relative;
+  top: -5.5VH;
+  visibility: hidden;
+}
 
+/* Budskap, kvalitet och produkter */
 .message, .quality, .possibility {
   padding: 10px 20px 10px 20px;
   min-height: 20em;
