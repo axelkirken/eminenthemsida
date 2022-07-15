@@ -382,3 +382,27 @@ function handleTouchMove(evt, section) {
         a = n.ctx;
     n.resize(), t = new e(n.width, n.height, 6, "#dfb2a9", "#dfb2a9"), o()
 }();
+
+/* Navigationsbar */
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (screen.width >= 992) return;
+    if (document.documentElement.scrollTop > screen.height * 0.8) {
+        document.getElementById("headerBar").style.top = "0%";
+    } else {
+        document.getElementById("headerBar").style.top = "-100%";
+    }
+}
+
+/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("navOverlay").style.height = "100%";
+    document.getElementById("navOverlayContent").style.top = "25%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("navOverlay").style.height = "0%";
+    document.getElementById("navOverlayContent").style.top = "0%";
+}
