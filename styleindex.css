@@ -25,14 +25,14 @@ header img {
 .commercial-container {
   position: relative;
   display: inline-block;
-  width: 50%;
+  width: 100%;
   font-size: 0px;
 }
 
 .wedding-container {
   position: relative;
   display: inline-block;
-  width: 50%;
+  width: 100%;
   font-size: 0px;
 }
 
@@ -54,10 +54,6 @@ header img {
 
 }
 
-.picture-container #wedding-text {
-
-
-}
 
 footer {
   padding: 2em 2em;
@@ -69,13 +65,13 @@ footer {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .commercial-container, .wedding-container {
-    display: block;
-    width: 100%
+    display: inline-block;
+    width: 50%;
   }
   .picture-container img {
-    width: 100%
+    width: 100%;
   }
 
 
@@ -84,4 +80,4 @@ footer {
 
 
 
-}
+
