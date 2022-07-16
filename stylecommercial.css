@@ -56,6 +56,10 @@ header img {
   font-size: 6VH;
 }
 
+.menu-button:hover {
+  cursor: pointer;
+}
+
 /* Navigationsknappar */
 .nav-bar-item {
   display: none;
