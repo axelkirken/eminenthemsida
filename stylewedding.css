@@ -25,6 +25,8 @@ h1 {
 /* Header och navigation för dator */
 header {
   height: 100VH;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .header-bar {
