@@ -1,4 +1,4 @@
-window.onscroll = function() {scrollFunction()};
+/* window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     if (screen.width >= 992) return;
@@ -7,7 +7,7 @@ function scrollFunction() {
     } else {
         document.getElementById("headerBar").style.top = "-100%";
     }
-}
+} */
 
 /* Open when someone clicks on the span element */
 function openNav() {
