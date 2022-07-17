@@ -6,6 +6,17 @@ html {
   scroll-behavior: smooth;
 }
 
+.ios-animation-fixer {
+  position: fixed;
+  width: 100%;
+  height: 10px;
+  top: -10px;
+  background-color: green;
+  z-index: 5;
+  pointer-events: none;
+  visibility: none;
+}
+
 body {
   background-color: #ce8b7e;;
   margin: 0px;
