@@ -406,3 +406,10 @@ function closeNav() {
     document.getElementById("navOverlay").style.height = "0%";
     document.getElementById("navOverlayContent").style.top = "0%";
 }
+
+/* Tillfällig lösning för formulär */
+
+const somethingWentWrong = () => {
+    alert("Ojdå, något gick visst fel. Skriv gärna till oss på vår e-post info@eminentfilm.se istället!")
+}
+
