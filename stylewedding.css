@@ -25,9 +25,7 @@ h1 {
 /* Header och navigation för dator */
 header {
   height: 100VH;
-  perspective: 1000;
   backface-visibility: hidden;
-  -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
 }
 
