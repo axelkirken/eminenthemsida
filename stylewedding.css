@@ -25,6 +25,10 @@ h1 {
 /* Header och navigation för dator */
 header {
   height: 100VH;
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 
 .header-bar {
@@ -522,11 +526,11 @@ footer {
   line-height: 1em;
   font-size: 2.5em;
   color: white;
-  z-index: 1;
+  z-index: 10;
 }
 
 .constant_words {
-  z-index: 1;
+  z-index: 10;
 }
 
 
