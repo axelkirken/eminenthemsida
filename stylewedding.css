@@ -224,7 +224,7 @@ canvas{
   animation-fill-mode: forwards;  
   height: 20em;
   width: 20rem;
-  background-image: url("images/paper.jpeg");
+  background-image: url("https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/paper.jpeg");
   color: #181818;
   margin: 0px 0px;
   text-align: center;
