@@ -23,8 +23,8 @@ function closeNav() {
 
 /* Tillfällig lösning för formulär */
 
-const somethingWentWrong = () => {
+/* const somethingWentWrong = () => {
     alert("Ojdå, något gick visst fel. Skriv gärna till oss på vår e-post info@eminentfilm.se istället!")
 }
-
+ */
 
