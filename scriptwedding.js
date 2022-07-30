@@ -396,6 +396,7 @@ function scrollFunction() {
 } */
 
 const menuButton = document.getElementById("menu-button");
+const closeButton = document.getElementById("close-button")
 const navOverlay = document.getElementById("navOverlay");
 const navOverlayContent = document.getElementById("navOverlayContent");
 
@@ -403,15 +404,19 @@ const navOverlayContent = document.getElementById("navOverlayContent");
 const openNav = () => {
     navOverlay.style.height = "100%";
     navOverlayContent.style.top = "25%";
+    menuButton.style.display = "none";
 }
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 const closeNav = () => {
     navOverlay.style.height = "0%";
     navOverlayContent.style.top = "0%";
+    menuButton.style.display = "inline";
 }
 
-menuButton.addEventListener("click", openNav)
+menuButton.addEventListener("click", openNav);
+closeButton.addEventListener("click", closeNav);
+navOverlay.addEventListener("click", closeNav);
 
 
 /* Formulär */
