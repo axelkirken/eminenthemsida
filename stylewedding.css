@@ -369,11 +369,14 @@ canvas{
 }
 
 .contact .form {
+  display: flex;
+  align-items: center;
   width: 100VW;
   margin: 0 10%;
 }
 
 .contact form {
+  width: 100%;
   display: grid;
   text-align: left;
   row-gap: 0px;
@@ -411,6 +414,18 @@ canvas{
   border: 2px solid #ffffff;
 }
 
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  }
+
+
+.form-hide {
+  display: none !important;
+}
+  
+
 footer {
   margin-top: 10px;
   padding: 1em 2em;
@@ -422,6 +437,7 @@ footer {
   background-color: #a66d62;
 
 }
+
 
 
 

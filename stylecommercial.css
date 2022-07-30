@@ -285,6 +285,8 @@ header img {
 }
 
 .contact .form {
+  display: flex;
+  align-items: center;
   width: 100VW;
   margin: 0 10%;
 }
@@ -293,13 +295,22 @@ header img {
   display: grid;
   text-align: left;
   row-gap: 0px;
+  width: 100%;
 }
 
 .contact input, .contact textarea {
+  border-style: solid;
   border-radius: 6px;
+  border-color: white;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  font-size: inherit;
+}
+
+.contact textarea {
+  font-family: 'Montserrat', sans serif;
+  resize: none;
 }
 
 #send-button {
@@ -312,8 +323,11 @@ header img {
 
 }
 
+.form-hide {
+  display: none !important;
+}
 
-/* Can be a fix for different form look on phone, needs testing */
+/* Fix for button on mobile devices */
 input, button {
 -webkit-appearance: none;
 -moz-appearance: none;

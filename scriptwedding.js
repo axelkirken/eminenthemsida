@@ -407,9 +407,42 @@ function closeNav() {
     document.getElementById("navOverlayContent").style.top = "0%";
 }
 
-/* Tillfällig lösning för formulär */
 
-const somethingWentWrong = () => {
+/* Formulär */
+
+const formSuccess = () => {
+    contactForm.classList.add("form-hide");
+    thankYou.classList.remove("form-hide");
+    contactForm.reset();
+    /* setTimeout(() => {
+        contactForm.classList.remove("form-hide");
+        thankYou.classList.add("form-hide");
+    }, 5000); */
+}
+
+const formFailure = () => {
     alert("Ojdå, något gick visst fel. Skriv gärna till oss på vår e-post info@eminentfilm.se istället!")
 }
 
+function handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    data.site = "Wedding";
+
+    fetch("https://xiwpkasq5c.execute-api.eu-north-1.amazonaws.com/final/contact-us", {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => formSuccess())
+    .catch(err => formFailure())
+}
+
+const contactForm = document.getElementById("contact-form");
+const thankYou = document.getElementById("thankYou");
+contactForm.addEventListener("submit", handleSubmit);
