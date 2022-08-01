@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"/>
     <meta name="author" content="Axel Kierkegaard & Teodor Morfeldt Gadler">
-    <!-- För att undvika formatering av nummer: -->
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Högkvalitativ och inspirerande filmproduktion. Reklamfilm, eventfilm, livesändningar, film för sociala medier, företagsfilmer och mycket mer.">
     <link rel="shortcut icon" href="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/favicon.ico" />
@@ -14,24 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
     <title>Eminent: Företag</title>
   </head>
+
   <body>
     <header> 
       <video id="background-video" playsinline autoplay loop muted>
         <source src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/Eminent_Commercial_720.mp4" type="video/mp4">
       </video>
-      
-      <div class="header-bar" id="headerBar"> 
-        <a href="index.html"><img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/logoinv.png" alt=""></a>
-        
-        <span class="menu-button" onclick="openNav()">
-          &#9776;
-        </span>
-
+      <nav class="header-bar" id="headerBar"> 
+        <a href="index.html"><img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/logoinv.png" alt="Eminent Film Logotyp"></a>
+        <span id="menu-button" class="menu-button">&#9776;</span>
         <a href=#projects><span class="nav-bar-item">Projekt</span></a>
         <a href=#staff><span class="nav-bar-item">Om oss</span></a>
         <a href=#contact><span class="nav-bar-item">Kontakta oss</span></a>
-      </div>
-
+      </nav>
       <div class="word-wrap">
         <h2 class="sentence">
           <div class="constant_words">Vi skapar er </div>
@@ -43,35 +37,32 @@
           </div>
         </h2>
       </div>
-
-    </header>
-      
-    <div class="nav-overlay" id="navOverlay" onclick=closeNav()>
-      <a href="javascript:void(0)" class="close-button" onclick="closeNav()">
-        &times
-      </a>
-      <div class="nav-overlay-content" id="navOverlayContent">
-        <a href=#projects><h2>Projekt</h2></a>
-        <a href=#staff><h2>Om oss</h2></a>
-        <a href=#contact><h2>Kontakta oss</h2></a>
+      <div class="nav-overlay" id="navOverlay">
+        <a href="javascript:void(0)" id="close-button" class="close-button">&times</a>
+        <nav class="nav-overlay-content" id="navOverlayContent">
+          <a href=#projects><h2>Projekt</h2></a>
+          <a href=#staff><h2>Om oss</h2></a>
+          <a href=#contact><h2>Kontakta oss</h2></a>
+        </nav>
       </div>
-    </div>
+    </header>
+    
 
     <section class="message">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/message_img.png">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/message_img.png" alt="Inspelning av musikvideo, rapparen YiGZAW">
       <h3 class="text">Vi får ert budskap att växa</h3>
       <p class="text">Vårt mål är inte bara att erbjuda en bra film, utan vår ambition är alltid eminent filmproduktion som är högkvalitativ, ändamålsenlig och inspirerande. Oavsett vad ni vill säga, vilka historier ni vill berätta eller vilka känslor ni vill väcka så finns vi här för att föreviga, förmedla och föra vidare ert budskap.</p>
       <p class="text">Film kan användas på många olika sätt och i vitt skilda sammanhang, men gemensamt är att dina möjligheter att skapa ett avtryck blir betydligt större när du väljer att uttrycka dina ord i form av rörliga bilder, oaktat vilka orden är eller vem de är avsedda för. Vi skapar ert avtryck.</p>
     </section>
 
     <section class="quality">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/quality_img.jpg">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/quality_img.jpg" alt="Filminspelning på Skärsätragården, Lidingö">
       <h3 class="text">Alltid högsta kvalitet</h3>
       <p class="text">Vi vill producera film av en kvalitet som sällan skådas. Detta är möjligt då vi alltid arbetar med minst två erfarna filmfotografer samt den bästa utrustning som finns att tillgå. Samtidigt bidrar vår mångåriga expertis inom eventfotografi, kortfilms- och reklamproduktion att vi står redo inför alla utmaningar, stora som små.</p>
     </section>
 
     <section class="possibility">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/possibility_img.jpg">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/possibility_img.jpg" alt="Film på Lidingö">
       <p class="text">Vi skräddarsyr alltid våra tjänster och produktioner efter era önskemål och målsättningar. Våra medarbetares breda kompetens gör att vi kan erbjuda bland annat:</p>
       <ul class="text">
         <li>Reklamfilm</li>
@@ -97,18 +88,18 @@
 
     <section class="partners">
       <h1>Tidigare partners</h1>
-      <img class="computer" src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/partners_img.png">
-      <img class="mobile" src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/partners_mobile.png">
+      <img class="computer" src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/partners_img.png" alt="Tidigare inspelningspartners">
+      <img class="mobile" src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/partners_mobile.png" alt="Tidigare inspelningspartners">
     </section>
 
     <a class="anchor" id="staff"></a>
     <section class="staff">
       <div class ="text">
         <h1>Om oss</h1>
-        <p>Vi, Teodor Morfeldt Gadler och Axel Kierkegaard, träffades för första gången i grundskolan och har arbetat tillsammans i många år. Vår passion för film är omättlig och vi brinner för att hela tiden utveckla vårt hantverk och sträva efter nya höjder. Vi utgår ifrån Lidingö i Stockholm men åtar oss uppdrag på alla möjliga håll i landet.</p>
+        <p>Vi, Axel Kierkegaard och Teodor Morfeldt Gadler, träffades för första gången i grundskolan och har arbetat tillsammans i många år. Vår passion för film är omättlig och vi brinner för att hela tiden utveckla vårt hantverk och sträva efter nya höjder. Vi utgår ifrån Lidingö i Stockholm men åtar oss uppdrag på alla möjliga håll i landet.</p>
       </div>
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/teodor.png">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/axel.png">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/teodor.png" alt="Teodor Morfeldt Gadler">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/axel.png" alt="Axel Kierkegaard">
     </section>
 
     <section class="free-projects">

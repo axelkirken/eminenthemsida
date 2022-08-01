@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"/>
     <meta name="author" content="Axel Kierkegaard & Teodor Morfeldt Gadler">
-    <!-- För att undvika formatering av nummer: -->
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Högkvalitativ och inspirerande bröllopsfilm. Två fotografer, drönarfilm, vigselfilm, save the date-film.">
     <link rel="shortcut icon" href="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/favicon.ico" />
@@ -14,25 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
     <title>Eminent: Bröllop</title>
   </head>
+
   <body>
     <header>
-      
       <video id="background-video" playsinline autoplay loop muted>
         <source src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/Eminent_Wedding_720.mp4" type="video/mp4">
       </video>
-      
-      <div class="header-bar" id="headerBar"> 
-        <a href="index.html"><img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/logoinv.png" alt=""></a>
-        
-        <span class="menu-button" onclick="openNav()">
-          &#9776;
-        </span>
-        
+      <nav class="header-bar" id="headerBar"> 
+        <a href="index.html"><img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/logos/logoinv.png" alt="Eminent Film Logotyp"></a>
+        <span id="menu-button" class="menu-button">&#9776;</span>
         <a href=#contact><span class="nav-bar-item">Kontakta oss</span></a>
         <a href=#staff><span class="nav-bar-item">Om oss</span></a>
         <a href=#products><span class="nav-bar-item">Våra paket</span></a>
         <a href=#workflow><span class="nav-bar-item">Så går det till</span></a>
-      </div>
+      </nav>
       <div class="word-wrap">
         <h2 class="sentence">
           <div class="constant_words">Vi förevigar er </div>
@@ -44,31 +38,29 @@
           </div>
         </h2>
       </div>
+      <div class="nav-overlay" id="navOverlay">
+        <a href="javascript:void(0)" id="close-button" class="close-button">&times</a>
+        <nav class="nav-overlay-content" id="navOverlayContent">
+          <a href=#workflow><h2>Så går det till</h2></a>
+          <a href=#products><h2>Våra paket</h2></a>
+          <a href=#staff><h2>Om oss</h2></a>
+          <a href=#contact><h2>Kontakta oss</h2></a>
+        </nav>
+      </div>
     </header>
 
-    <div class="nav-overlay" id="navOverlay" onclick=closeNav()>
-      <a href="javascript:void(0)" class="close-button" onclick="closeNav()">
-        &times
-      </a>
-      <div class="nav-overlay-content" id="navOverlayContent">
-        <a href=#workflow><h2>Så går det till</h2></a>
-        <a href=#products><h2>Våra paket</h2></a>
-        <a href=#staff><h2>Om oss</h2></a>
-        <a href=#contact><h2>Kontakta oss</h2></a>
-      </div>
-    </div>
-
-    <div class="message">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/church.jpg">
+    <section class="message">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/church.jpg" alt="Kyrka, Varnhem, Drönarfoto">
       <h3 class="text">Ni skriver historian, vi erbjuder pennan</h3>
       <p class="text">Vårt mål är inte bara att erbjuda en eminent film utan vi vill berätta en historia, er historia, fylld av kärlek, hopp och framtidstro. Med fokus på berättandet förevigar vi er största dag i en trollbindande skildring av fina stunder, fantastiska känslor och flödande tårar.</p>
       <p class="text">Er dag är unik. Därför följer vi inga mallar, våra historier berättas utan förifyllda ord och varje projekt inleds över ett tomt ritbord. Pappret på vilket berättelsen diktas är ert att fylla i. Vi tillhandahåller pennan.</p>
-    </div>
-    <div class="quality">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/quality_img.jpg">
+    </section>
+
+    <section class="quality">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/quality_img.jpg" alt="Filminspelning Lidingö">
       <h3 class="text">Alltid högsta kvalitet</h3>
       <p class="text">Vår ambition är att leverera bröllopsfilmer av en kvalitet som sällan skådats. Detta är möjligt då vi alltid arbetar med minst två erfarna filmfotografer samt den bästa utrustning som finns att tillgå. Samtidigt nyttjar vi vår mångåriga expertis inom eventfotografi för att hålla oss diskreta - utan att krompromissa på slutprodukten.</p>
-    </div>
+    </section>
 
     <a class="anchor" id="products"></a>
     <section class="products">
@@ -117,8 +109,8 @@
       </div>
     </section>
     
-    <div class="possibility">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/weddingteam.jpg">
+    <section class="possibility">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/weddingteam.jpg" alt="Bröllopsvideograf">
       <p class="text">Vi förstår att inget bröllop är det andra likt. Därför välkomnar vi er att skräddarsy våra paket, så att allt blir precis som ni vill ha det. Till exempel kan vi hjälpa er med:</p>
       <ul class="text">
         <li>Separat film över alla talen.</li>
@@ -127,49 +119,49 @@
         <li>En extra inspelningsdag - för att verkligen kunna fånga just er historia.</li>
         <li>Save the date-film för att imponera på era gäster redan vid inbjudan.</li>
       </ul>
-    </div>
+    </section>
 
     <a class="anchor" id="workflow"></a>
     <section class="workflow">
-    <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/sunset.jpg">
-    <h1>Så går det till</h1>
-    <div class="cards" id="workflowCards">
-      <div id="firstStep" class="card">
-        <h3>Kontakta oss</h3>
-        <p>Allt börjar med att ni kontaktar oss, antingen genom kontaktformuläret nedan eller via e-post. Därefter sätter vi upp ett möte vid en tid och plats som passar er.</p>
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/sunset.jpg" alt="Solnedgång i Stockholms skärgård">
+      <h1>Så går det till</h1>
+      <div class="cards" id="workflowCards">
+        <div id="firstStep" class="card">
+          <h3>Kontakta oss</h3>
+          <p>Allt börjar med att ni kontaktar oss, antingen genom kontaktformuläret nedan eller via e-post. Därefter sätter vi upp ett möte vid en tid och plats som passar er.</p>
+        </div>
+        <div id="secondStep" class="card">
+          <h3>Mötet</h3>
+          <p>Vi ses och tar en kaffe för att lära känna och bli bekväma med varandra. Tillsammans sammanställer vi vad som är viktigt för er - så att er bröllopsfilm blir precis som ni tänkt er.</p>
+        </div>
+        <div id="thirdStep" class="card">
+          <h3>Bröllopsdagen</h3>
+          <p>Vi anländer på bröllopsdagen i god tid och inleder med att filma miljö- och detaljbilder under era förberedelser. Efter det arbetar vi självständigt i samarbete med de andra aktörerna - allt för att ni ska kunna koppla av och njuta av stunden.</p>
+        </div>
+        <div id="fourthStep" class="card">
+          <h3>Postproduktion</h3>
+          <p>I samråd med er väljer vi ut den musik som behövs till projektet. Sedan genomför vi en grovklippning som ni får lämna feedback på. Efter det förfinar vi filmerna för att sedan skicka över slutprodukterna till er. Ni får godkänna dem, och vid behov reviderar vi dem, allt för att ni ska bli helt nöjda.</p>
+        </div>
       </div>
-      <div id="secondStep" class="card">
-        <h3>Mötet</h3>
-        <p>Vi ses och tar en kaffe för att lära känna och bli bekväma med varandra. Tillsammans sammanställer vi vad som är viktigt för er - så att er bröllopsfilm blir precis som ni tänkt er.</p>
+      <div class="arrows">
+        <div class="arrow" id="leftArrow2"><p>&#x2190</p></div>
+        <div class="arrow" id="rightArrow2"><p>&#x2192</p></div>
       </div>
-      <div id="thirdStep" class="card">
-        <h3>Bröllopsdagen</h3>
-        <p>Vi anländer på bröllopsdagen i god tid och inleder med att filma miljö- och detaljbilder under era förberedelser. Efter det arbetar vi självständigt i samarbete med de andra aktörerna - allt för att ni ska kunna koppla av och njuta av stunden.</p>
-      </div>
-      <div id="fourthStep" class="card">
-        <h3>Postproduktion</h3>
-        <p>I samråd med er väljer vi ut den musik som behövs till projektet. Sedan genomför vi en grovklippning som ni får lämna feedback på. Efter det förfinar vi filmerna för att sedan skicka över slutprodukterna till er. Ni får godkänna dem, och vid behov reviderar vi dem, allt för att ni ska bli helt nöjda.</p>
-      </div>
-    </div>
-    <div class="arrows">
-      <div class="arrow" id="leftArrow2"><p>&#x2190</p></div>
-      <div class="arrow" id="rightArrow2"><p>&#x2192</p></div>
-    </div>
     </section>
 
 
     <a class="anchor" id="staff"></a>
-    <div class="staff">
+    <section class="staff">
       <div class ="text">
         <h1>Om oss</h1>
         <p>Vi, Axel Kierkegaard och Teodor Morfeldt Gadler, träffades för första gången i grundskolan och har arbetat tillsammans i många år. Vår passion för film är omättlig och vi brinner för att hela tiden utveckla vårt hantverk och sträva efter nya höjder. Vi utgår ifrån Lidingö i Stockholm men åtar oss uppdrag på alla möjliga håll i landet.</p>
       </div>
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/teodorcolor.png">
-      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/axelcolor.png">
-    </div>
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/axelcolor.png" alt="Axel Kierkegaard">
+      <img src="https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/teodorcolor.png" alt="Teodor Morfeldt Gadler">
+    </section>
 
     <a class="anchor" id="contact"></a>
-    <div class="contact">
+    <section class="contact">
       <div class="text">
         <h1>Kontakta oss!</h1>
         <p>Vi vill jättegärna höra mer om er och era önskemål! Kontakta oss via formuläret bredvid eller på epost-adressen nedan. <br><br>info@eminentfilm.se<br><br>Prismastigen 6<br>181 55 Lidingö</p>
@@ -186,7 +178,8 @@
         </form>
         <p id="thankYou" class="form-hide">Tack för ditt meddelande! Vi återkommer så fort vi kan.</p>
       </div>
-    </div>
+    </section>
+    
     <footer>
       <p>info@eminentfilm.se<br>
       Prismastigen 6<br>

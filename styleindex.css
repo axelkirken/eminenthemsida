@@ -11,10 +11,9 @@ header {
 }
 
 header img {
-  width: 15em;
+  width: 12em;
   margin: 10px 10px;
 }
-
 
 .picture-container {
   display: inline-block;
@@ -36,6 +35,7 @@ header img {
   font-size: 0px;
 }
 
+
 .picture-container img {
   margin: 0px;
   padding: 0px;
@@ -51,7 +51,7 @@ header img {
   position: absolute;
   left: 0%;
   top: 40%;
-
+  bottom: 80%;
 }
 
 
@@ -62,7 +62,6 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -73,8 +72,6 @@ footer {
   .picture-container img {
     width: 100%;
   }
-
-
   }
 
 
