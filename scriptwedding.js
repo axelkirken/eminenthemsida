@@ -395,16 +395,22 @@ function scrollFunction() {
     }
 } */
 
+const body = document.querySelector("body")
 const menuButton = document.getElementById("menu-button");
 const closeButton = document.getElementById("close-button")
 const navOverlay = document.getElementById("navOverlay");
 const navOverlayContent = document.getElementById("navOverlayContent");
+
+const scrollStop = (event) => {
+    event.preventDefault();
+}
 
 /* Open when someone clicks on the span element */
 const openNav = () => {
     navOverlay.style.height = "100%";
     navOverlayContent.style.top = "25%";
     menuButton.style.display = "none";
+    body.addEventListener("touchmove", scrollStop, { passive: false });
 }
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
@@ -412,6 +418,7 @@ const closeNav = () => {
     navOverlay.style.height = "0%";
     navOverlayContent.style.top = "0%";
     menuButton.style.display = "inline";
+    body.removeEventListener("touchmove", scrollStop);
 }
 
 menuButton.addEventListener("click", openNav);
