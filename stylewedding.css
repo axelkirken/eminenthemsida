@@ -1,5 +1,5 @@
 :root {
-  --opaque-black: rgba(0,0,0, 0.7);
+  --transparent-brown: rgba(101, 66, 59, 0.9)
 }
 
 html {
@@ -17,7 +17,7 @@ body {
   font-size: 1.25em;
 }
 
-h1 {
+h2 {
   text-align: center;
   font-size: 2.5em;
   line-height: 1em;
@@ -35,7 +35,7 @@ header {
   display: block;
   width: 100%;
   top: 0%;
-  background-color: var(--opaque-black);
+  background-color: var(--transparent-brown);
   z-index: 10;
   transition: top 0.3s;
 }
@@ -106,7 +106,7 @@ header img {
   z-index: 20;
   left: 0;
   top: 0;
-  background-color: var(--opaque-black);
+  background-color: var(--transparent-brown);
   overflow: hidden;
   transition: 0.5s;
   backdrop-filter: blur(8px);
@@ -152,24 +152,54 @@ header img {
 /* Budskap, kvalitet och produkter */
 .message, .quality, .possibility {
   padding: 10px 20px 10px 20px;
-  min-height: 20em;
-}
-
-.quality {
-  min-height: 15em;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .message img, .possibility img {
-  margin: 20px 20px 10px 0px;
+  margin: 0px 20px 10px 0px;
   width: 100%;
   float: left;
 }
 
-.quality img {
-  margin: 20px 0px 10px 0px;
+.message h3 {
+  font-size: 1.7em;
+  line-height: 1.1em;
+  margin: 0;
+}
+
+.quality h1 {
+  font-size: 1.7em;
+  line-height: 1.1em;
+  float: left;
+}
+
+.quality p {
+  clear: left;
+}
+
+.possibility p {
+  clear: right;
+}
+
+.quality .video-wrap {
+  margin: 0px 10px 10px 0px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
   float: right;
 }
+
+.quality .video-wrap iframe {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 
 
 /* Paket och Så går det till*/
@@ -181,7 +211,7 @@ header img {
   padding: 10px 0;
 }
 
-.products h1, .workflow h1 {
+.products h2, .workflow h2 {
   position: relative;
   padding: 10px 0px 0px 0px;
   margin: 0;
@@ -360,7 +390,7 @@ canvas{
   margin-bottom: 0;
 }
 
-.contact .text h1 {
+.contact .text h2 {
   text-align: left;
 }
 
@@ -443,10 +473,16 @@ footer {
 
 
 @media only screen and (min-width: 768px) {
-  .message img, .quality img, .possibility img {
+  .message img, .possibility img {
     margin-left: 20px;
     margin-right: 20px;
     width: 25em;
+  }
+
+  .quality .video-wrap {
+    width: 25em;
+    padding-top: 14.0625em;
+    margin: 0 20px;
   }
 
   .possibility img {
@@ -455,14 +491,6 @@ footer {
   .possibility ul {
     column-count: 2;
     clear: both;
-  }
-
-  .projects .video-wrap, .free-projects .video-wrap {
-      width: 40%;
-      position: relative;
-      overflow: hidden;
-      padding-top: 22.5%;
-      margin: 15px 15px;
   }
 
   .partners .computer {
@@ -511,6 +539,11 @@ footer {
     margin-right: 30px;
   }
 
+  .quality .video-wrap {
+    width: 30em;
+    padding-top: 16.875em;
+    margin: 0 20px;
+  }
 
   .message .text {
     margin-left: 30px;
@@ -546,6 +579,7 @@ footer {
   justify-content: center;
   line-height: 1em;
   font-size: 2.2rem;
+  text-align: left;
   color: white;
   z-index: 20;
 }

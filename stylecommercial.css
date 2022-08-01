@@ -17,7 +17,7 @@ body {
   overscroll-behavior: none;
 }
 
-h1 {
+h2 {
   text-align: center;
   font-size: 2.5em;
   line-height: 1em;
@@ -146,23 +146,38 @@ header img {
 /* Budskap, kvalitet och produkter */
 .message, .quality, .possibility {
   padding: 10px 20px 10px 20px;
-  min-height: 20em;
-}
-
-.quality {
-  min-height: 15em;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .message img, .possibility img {
-  margin: 20px 20px 10px 0px;
+  margin: 0px 20px 10px 0px;
   width: 100%;
   float: left;
 }
 
 .quality img {
-  margin: 20px 0px 10px 0px;
+  margin: 0px 10px 10px 0px;
   width: 100%;
   float: right;
+}
+
+.message h3 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.quality h1 {
+  font-size: 1.8em;
+  float: left;
+}
+
+.quality p {
+  clear: left;
+}
+
+.possibility p {
+  clear: right;
 }
 
 /* Utvalda projekt */
@@ -271,7 +286,7 @@ header img {
   margin-bottom: 0;
 }
 
-.contact .text h1 {
+.contact .text h2 {
   text-align: left;
 }
 
@@ -452,11 +467,12 @@ footer {
   line-height: 1em;
   font-size: 2.2rem;
   color: white;
-  z-index: 1;
+  z-index: 20;
+  text-align: left;
 }
 
 .constant_words {
-  z-index: 1;
+  z-index: 20;
 }
 
 
@@ -492,18 +508,6 @@ footer {
 }
 
 
-.word-wrap {
-  -webkit-transform:translate3d(0,0,0);
-  -ms-transform:translate3d(0,0,0);
-  transform:translate3d(0,0,0);
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -ms-perspective: 1000;
-  perspective: 1000;
-}
-
 @media only screen and (min-width: 464px) {
   .slidingVertical {
     display: block;
@@ -520,6 +524,17 @@ footer {
   }
 }
 
+.word-wrap {
+  -webkit-transform:translate3d(0,0,0);
+  -ms-transform:translate3d(0,0,0);
+  transform:translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
 
 /*topToBottom Animation*/
 @keyframes topToBottom{
