@@ -165,9 +165,11 @@ header img {
 .message h3 {
   font-size: 1.8em;
   margin: 0;
+  line-height: 1.1em;
 }
 
 .quality h1 {
+  line-height: 1.1em;
   font-size: 1.8em;
   float: left;
 }
@@ -366,7 +368,10 @@ footer img {
   margin: 10px 10px;
 }
 
-
+footer img:hover {
+  transition: all .2s ease-in-out; 
+  transform: scale(1.2);
+}
 
 
 @media only screen and (min-width: 768px) {
