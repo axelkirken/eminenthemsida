@@ -40,12 +40,6 @@ header {
   transition: top 0.3s;
 }
 
-/* @media only screen and (max-width: 768px) {
-  .word-wrap {
-    display: none;
-  }
-}
- */
 
 /* Logga i header */
 header img {
@@ -83,7 +77,7 @@ header img {
 }
 
 .nav-bar-item:hover {
-  background-color: rgb(25, 25, 25);
+  background-color: #4b3432;
 }
 
 #background-video {
@@ -468,7 +462,10 @@ footer {
 
 }
 
-
+footer img {
+  height: 2em;
+  margin: 10px 10px;
+}
 
 
 
