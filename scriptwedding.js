@@ -431,8 +431,7 @@ navOverlay.addEventListener("click", closeNav);
 
 /* Formulär */
 
-const formSuccess = (e) => {
-    e.preventDefault();
+const formSuccess = () => {
     contactForm.classList.add("form-hide");
     thankYou.classList.remove("form-hide");
     contactForm.reset();
@@ -467,4 +466,4 @@ function handleSubmit(e) {
 
 const contactForm = document.getElementById("contact-form");
 const thankYou = document.getElementById("thankYou");
-contactForm.addEventListener("submit", formSuccess);
+contactForm.addEventListener("submit", handleSubmit);
