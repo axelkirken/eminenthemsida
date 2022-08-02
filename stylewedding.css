@@ -14,7 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   background-color: var(--main-pink);
   margin: 0px;
@@ -98,12 +97,12 @@ header img {
   width: 100%;
   height: 100%;
   position: absolute;
+  object-fit: cover;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   z-index: -1;
-  object-fit: cover;
 }
 
 /* Navigation för mobil */
@@ -128,7 +127,6 @@ header img {
   text-decoration: none;
   color: white;
 }
-
 
 .nav-overlay-content {
   position: relative;
@@ -163,6 +161,7 @@ nav h3 {
 }
 
 /* Budskap, kvalitet och produkter */
+
 .message, .quality, .possibility {
   padding: 10px 20px 10px 20px;
   overflow-y: auto;
@@ -209,15 +208,13 @@ nav h3 {
 
 .quality .video-wrap iframe {
   position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-
-
 
 /* Paket och Så går det till*/
 
@@ -370,10 +367,9 @@ canvas{
   }
 }
 
-
 /* Om oss */
+
 .staff {
-  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -395,9 +391,12 @@ canvas{
 .contact {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
+.contact .text h2 {
+  text-align: left;
+}
 
 .contact .text {
   width:100VW;
@@ -405,14 +404,6 @@ canvas{
   margin-right: 10%;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.contact .text h2 {
-  text-align: left;
-}
-
-#name, #email, #message {
-  margin-top:10px;
 }
 
 .contact .form {
@@ -437,11 +428,13 @@ canvas{
   margin: 8px 0;
   box-sizing: border-box;
   font-size: inherit;
-}
-
-.contact textarea {
   font-family: 'Montserrat', sans serif;
   resize: none;
+}
+
+#name, #email, #message {
+  margin: 10px 0 0 0;
+  font-weight: 600;
 }
 
 #send-button {
@@ -449,10 +442,12 @@ canvas{
   font-weight: 800;
   color: var(--darker-pink);
   width: 10em;
-  border-radius: 0;
+  border-radius: 6px;
   background-color: white;
   border-color: var(--darker-pink);
-
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 #send-button:hover {
@@ -461,17 +456,15 @@ canvas{
   border: 2px solid white;
 }
 
-input, button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  }
-
-
 .form-hide {
-  display: none !important;
+  display: none !important; 
+}
+
+#thankYou {
+  font-weight: 800;
 }
   
+/* Footer */
 
 footer {
   margin-top: 10px;
@@ -482,7 +475,6 @@ footer {
   font-weight: 500;
   line-height: 1.5em;
   background-color: var(--darker-pink);
-
 }
 
 footer img {
@@ -495,7 +487,7 @@ footer img:hover {
   transform: scale(1.2);
 }
 
-
+/* Större skärmar */
 
 @media only screen and (min-width: 768px) {
   .message img, .possibility img {
@@ -513,6 +505,7 @@ footer img:hover {
   .possibility img {
     margin-right: 40px;
   }
+
   .possibility ul {
     column-count: 2;
     clear: both;
@@ -545,7 +538,6 @@ footer img:hover {
 
 
 @media only screen and (min-width: 1100px) {
-  /* Navigationsmenyer */
   .menu-button {
     display: none;
   }
@@ -614,8 +606,6 @@ footer img:hover {
   z-index: 20;
 }
 
-
-/*Vertical Sliding*/
 .slidingVertical{
   display: flex;
   justify-content: center;
@@ -715,15 +705,14 @@ footer img:hover {
 }
 
 
+/* Card animations move{towards direction}{cards shown}{In, 1, 2, Out} */
 /* One card */
 
 @keyframes moveRight1In {
   0% {
-    /* transform: translateX(-100vw);   */
     left: -25rem;
   }
   100% {
-    /* transform: translateX(0vw); */
     left: calc(50%-10rem);
     
   }
@@ -740,11 +729,9 @@ footer img:hover {
 
 @keyframes moveRight1Out {
   0% {
-    /* transform: translateX(0vw);   */
     left: calc(50% - 10rem)
   }
   100% {
-    /* transform: translateX(100vw); */
     left: 110vw
   }
 }

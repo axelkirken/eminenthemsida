@@ -384,7 +384,7 @@ const movingDots = function() {
 };
 
 movingDots();
-window.addEventListener("resize", movingDots)
+
 
 /* Navigationsbar */
 /* window.onscroll = function() {scrollFunction()};
@@ -431,7 +431,8 @@ navOverlay.addEventListener("click", closeNav);
 
 /* Formulär */
 
-const formSuccess = () => {
+const formSuccess = (e) => {
+    e.preventDefault();
     contactForm.classList.add("form-hide");
     thankYou.classList.remove("form-hide");
     contactForm.reset();
@@ -466,4 +467,4 @@ function handleSubmit(e) {
 
 const contactForm = document.getElementById("contact-form");
 const thankYou = document.getElementById("thankYou");
-contactForm.addEventListener("submit", handleSubmit);
+contactForm.addEventListener("submit", formSuccess);
