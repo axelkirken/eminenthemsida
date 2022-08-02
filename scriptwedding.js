@@ -291,7 +291,7 @@ function handleTouchMove(evt, section) {
 
 
 //Moving dots in background
-! function() {
+const movingDots = function() {
     "use strict";
     var t, i = {
             screen: {
@@ -381,7 +381,10 @@ function handleTouchMove(evt, section) {
         n = i.screen.init("liquid", null, !0),
         a = n.ctx;
     n.resize(), t = new e(n.width, n.height, 6, "#dfb2a9", "#dfb2a9"), o()
-}();
+};
+
+movingDots();
+window.addEventListener("resize", movingDots)
 
 /* Navigationsbar */
 /* window.onscroll = function() {scrollFunction()};
@@ -409,7 +412,7 @@ const scrollStop = (event) => {
 const openNav = () => {
     navOverlay.style.height = "100%";
     navOverlayContent.style.top = "25%";
-    menuButton.style.display = "none";
+    menuButton.style.visibility = "hidden";
     body.addEventListener("touchmove", scrollStop, { passive: false });
 }
 
@@ -417,7 +420,7 @@ const openNav = () => {
 const closeNav = () => {
     navOverlay.style.height = "0%";
     navOverlayContent.style.top = "0%";
-    menuButton.style.display = "inline";
+    menuButton.style.visibility = "visible";
     body.removeEventListener("touchmove", scrollStop);
 }
 

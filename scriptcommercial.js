@@ -23,7 +23,7 @@ const scrollStop = (event) => {
 const openNav = () => {
     navOverlay.style.height = "100%";
     navOverlayContent.style.top = "25%";
-    menuButton.style.display = "none";
+    menuButton.style.visibility = "hidden";
     body.addEventListener("touchmove", scrollStop, { passive: false });
 }
 
@@ -32,7 +32,7 @@ const openNav = () => {
 const closeNav = () => {
     navOverlay.style.height = "0%";
     navOverlayContent.style.top = "0%";
-    menuButton.style.display = "inline";
+    menuButton.style.visibility = "visible";
     document.querySelector("body").removeEventListener("touchmove", scrollStop);
 }
 

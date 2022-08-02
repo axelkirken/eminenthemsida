@@ -7,12 +7,17 @@ body {
 }
 
 header {
-  margin: 20px;
+  height: 10vh;
+  position: relative;
 }
 
 header img {
-  width: 12em;
-  margin: 10px 10px;
+  display: inline-block;
+  position: absolute;
+  height: 4VH;
+  top: calc(50% - 2vh);
+  margin: 0px 10px;
+  z-index: 10;
 }
 
 .picture-container {

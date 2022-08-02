@@ -1,5 +1,5 @@
 :root {
-  --opaque-black: rgba(0,0,0, 0.7);
+  --opaque-black: rgba(0,0,0, 0.8);
 }
 
 html {
@@ -36,39 +36,46 @@ header {
   width: 100%;
   top: 0%;
   background-color: var(--opaque-black);
-  z-index: 1;
+  z-index: 10;
   transition: top 0.3s;
+  height: 10vh;
 }
 
 
 /* Logga i header */
 header img {
   display: inline-block;
-  vertical-align: top;
+  position: absolute;
   height: 4VH;
-  padding: 10px 10px;
-  z-index: 1;
+  top: calc(50% - 2VH);
+  margin: 0px 10px;
+  z-index: 10;
 }
+
 
 /* Menyknapp på mobil */
 .menu-button {
+  display: flex;
+  align-items: center;
   float: right;
-  display: block;
-  height: 4VH;
-  padding: 5px 10px;
-  font-size: 6VH;
+  text-align: center;
+  right: 10px;
+  height: 10vh;
+  padding: 0 10px 0 10px;
+  font-size: 2em;
 }
 
 .menu-button:hover {
   cursor: pointer;
+  background-color: rgb(25, 25, 25);
 }
 
 /* Navigationsknappar */
 .nav-bar-item {
   display: none;
   float: right;
-  height: 4VH;
-  padding: 10px 10px;
+  height: 10VH;
+  padding: 0px 10px;
 }
 
 .header-bar a {
@@ -97,7 +104,7 @@ header img {
   height: 0%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   left: 0;
   top: 0;
   background-color: var(--opaque-black);
@@ -108,7 +115,7 @@ header img {
 
 .nav-overlay .close-button {
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 10px;
   font-size: 3.6em;
   text-decoration: none;
@@ -131,21 +138,25 @@ header img {
   transition: 0.2s;
 }
 
+nav h3 {
+  font-size: 1.8em;
+}
+
 .nav-overlay-content a:hover {
-  color: rgb(54, 54, 54);
+  color: rgb(136, 136, 136);
 }
 
 /* Justerar skrollningen vid länk till samma sida */
 .anchor {
   display: block;
   position: relative;
-  top: -5.5VH;
+  top: -8VH;
   visibility: hidden;
 }
 
 /* Budskap, kvalitet och produkter */
 .message, .quality, .possibility {
-  padding: 10px 20px 10px 20px;
+  padding: 0px 20px 10px 20px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -163,12 +174,14 @@ header img {
 }
 
 .message h3 {
+  text-align: center;
   font-size: 1.8em;
   margin: 0;
   line-height: 1.1em;
 }
 
 .quality h1 {
+  text-align: center;
   line-height: 1.1em;
   font-size: 1.8em;
   float: left;
@@ -430,7 +443,8 @@ footer img:hover {
   }
 
   .nav-bar-item {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .message img, .quality img, .possibility img {
