@@ -32,6 +32,7 @@ header img {
   display: inline-block;
   width: 100%;
   font-size: 0px;
+  filter: grayscale(100%);
 }
 
 .wedding-container {
@@ -39,19 +40,21 @@ header img {
   display: inline-block;
   width: 100%;
   font-size: 0px;
+  filter: grayscale(100%);
 }
 
 .commercial-container:hover {
   z-index: 1;
   transition: all .2s ease-in-out; 
   box-shadow: 0 0 20px rgba(204, 204, 204, 0.4);
-
+  filter: grayscale(0);
 }
 
 .wedding-container:hover {
   z-index: 1;
   transition: all .2s ease-in-out; 
   box-shadow: 0 0 20px rgba(204, 204, 204, 0.4);
+  filter: grayscale(0);
 }
 
 .picture-container img {
