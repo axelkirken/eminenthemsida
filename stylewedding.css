@@ -1,5 +1,13 @@
 :root {
   --transparent-brown: rgba(60, 39, 35, 0.95);
+  --hover-brown: #4b3432;
+  --main-pink: #ce8b7e;
+  --darker-pink: #a66d62;
+  --arrow-hover-pink: #b6786d;
+  --arrow-light-pink: #cea198;
+  --card-text: #181818;
+  --card-shadow: #515050;
+  --nav-hover: rgb(136,136,136);
 }
 
 html {
@@ -8,7 +16,7 @@ html {
 
 
 body {
-  background-color: #ce8b7e;;
+  background-color: var(--main-pink);
   margin: 0px;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -66,7 +74,7 @@ header img {
 
 .menu-button:hover {
   cursor: pointer;
-  background-color: #4b3432;
+  background-color: var(--hover-brown);
 }
 
 /* Navigationsknappar */
@@ -83,7 +91,7 @@ header img {
 }
 
 .nav-bar-item:hover{
-  background-color: #4b3432;
+  background-color: var(--hover-brown);
 }
 
 #background-video {
@@ -143,7 +151,7 @@ nav h3 {
 }
 
 .nav-overlay-content a:hover {
-  color: rgb(136, 136, 136);
+  color: var(--nav-hover);
 }
 
 /* Justerar skrollningen vid länk till samma sida */
@@ -216,7 +224,7 @@ nav h3 {
 .products, .workflow {
   position: relative;
   z-index: 1;
-  background-color: #a66d62;
+  background-color: var(--darker-pink);
   padding: 10px 0;
 }
 
@@ -264,13 +272,13 @@ canvas{
   height: 20em;
   width: 20rem;
   background-image: url("https://eminent-cdn.s3.eu-north-1.amazonaws.com/images/paper.jpeg");
-  color: #181818;
+  color: var(--card-text);
   margin: 0px 0px;
   text-align: center;
   display: none;
   white-space: normal;
   border-radius: 6px;
-  text-shadow:0 -1px 0 #515050;
+  text-shadow:0 -1px 0 var(--card-shadow);
 }
 
 .card p {
@@ -297,7 +305,7 @@ canvas{
   justify-content: center;
   width: 60px;
   height: 60px;
-  background-color: #ce8b7e;
+  background-color: var(--main-pink);
   border-radius: 50%;
   user-select: none;
   transition: background-color 0.5s;
@@ -305,11 +313,11 @@ canvas{
 
 .arrow:hover {
   cursor: pointer;
-  background-color: #b6786d;
+  background-color: var(--arrow-hover-pink);
 }
 
 .lightArrow, .lightArrow:hover {
-  background-color: #cea198;
+  background-color: var(--arrow-light-pink);
 }
 
 .show1 {
@@ -439,18 +447,18 @@ canvas{
 #send-button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  color: #a66d62;
+  color: var(--darker-pink);
   width: 10em;
   border-radius: 0;
-  background-color: #ffffff;
-  border-color: #a66d62;
+  background-color: white;
+  border-color: var(--darker-pink);
 
 }
 
 #send-button:hover {
-  color: #ffffff;
-  background-color: #a66d62;
-  border: 2px solid #ffffff;
+  color: white;
+  background-color: var(--darker-pink);
+  border: 2px solid white;
 }
 
 input, button {
@@ -473,7 +481,7 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 1.5em;
-  background-color: #a66d62;
+  background-color: var(--darker-pink);
 
 }
 
@@ -618,7 +626,7 @@ footer img:hover {
 	animation: topToBottom 10s linear infinite 0s;
 	-ms-animation: topToBottom 10s linear infinite 0s;
 	-webkit-animation: topToBottom 10s linear infinite 0s;
-	color: #ffffff;
+	color: white;
 	opacity: 0;
 	position: absolute;
 }
